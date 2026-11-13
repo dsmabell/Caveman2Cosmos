@@ -15,6 +15,7 @@
 #include "CvImprovementInfo.h"
 #include "CvBonusInfo.h"
 #include "CvInitCore.h"
+#include "StackPromotions.h"
 #include "CvMap.h"
 #include "CvMessageControl.h"
 #include "CvPlayerAI.h"
@@ -736,6 +737,17 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			}
 			break;
 		}
+		case BUTTONPOPUP_STACK_PROMOTIONS_MIGRATION:
+		{
+			if (1 == pPopupReturn->getButtonClicked() && !GC.getGame().isNetworkMultiPlayer())
+			{
+				GC.getGame().setOption(GAMEOPTION_COMBAT_STACK_PROMOTIONS, true);
+				StackPromotions::reset();
+				gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+				gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
+			}
+			break;
+		}
 		case BUTTONPOPUP_NAME_LIST:
 		{
 			if (pPopupReturn->getEditBoxString(0) && *(pPopupReturn->getEditBoxString(0)))
@@ -838,9 +850,39 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		}
 		case BUTTONPOPUP_CONFIRM_AMBUSH:
 		{
-			if (pPopupReturn->getButtonClicked() == 1)
+			if (pPopupReturn->getButtonClicked() != 0)
 			{
-				CvMessageControl::getInstance().sendAmbushConfirmation(true);
+				int DefID = pPopupReturn->getButtonClicked();
+				GET_PLAYER(GC.getGame().getActivePlayer()).setAmbushingTargetUnit(FFreeList::INVALID_INDEX);
+				if (DefID == 1) //Ambush, or no choice)
+				{
+					CvMessageControl::getInstance().sendAmbushConfirmation(true);
+				}
+				else
+				{
+					int iAttackerID = info.getData1();
+					bool bfoundDef = false;
+					const CvPlot* pPlot = GC.getMap().plot(info.getData2(), info.getData3());
+					foreach_(const CvUnit * unitX, pPlot->units())
+					{
+						if (unitX->getID() == DefID)
+						{
+							bfoundDef = true;
+							break;
+						}
+					}
+					if (bfoundDef)
+					{
+						GET_PLAYER(GC.getGame().getActivePlayer()).setAmbushingTargetUnit(DefID);
+						CvMessageControl::getInstance().sendAmbushConfirmation(true);
+					}
+					else
+					{
+						CvMessageControl::getInstance().sendAmbushConfirmation(false);
+						GET_PLAYER(GC.getGame().getActivePlayer()).setAmbushingUnit(FFreeList::INVALID_INDEX);
+					}
+
+				}
 			}
 			else
 			{
@@ -1086,6 +1128,10 @@ bool CvDLLButtonPopup::launchButtonPopup(CvPopup* pPopup, CvPopupInfo &info)
 		case BUTTONPOPUP_MODIFIER_RECALCULATION:
 		{
 			return launchModifierRecalculationPopup(pPopup, info);
+		}
+		case BUTTONPOPUP_STACK_PROMOTIONS_MIGRATION:
+		{
+			return launchStackPromotionsMigrationPopup(pPopup, info);
 		}
 		case BUTTONPOPUP_NAME_LIST:
 		{
@@ -2541,6 +2587,17 @@ bool CvDLLButtonPopup::launchModifierRecalculationPopup(CvPopup* pPopup, CvPopup
 	return true;
 }
 
+bool CvDLLButtonPopup::launchStackPromotionsMigrationPopup(CvPopup* pPopup, CvPopupInfo &info)
+{
+	if (GC.getGame().isNetworkMultiPlayer() || GC.getGame().isOption(GAMEOPTION_COMBAT_STACK_PROMOTIONS)) return false;
+	gDLL->getInterfaceIFace()->popupSetHeaderString(pPopup, gDLL->getText("TXT_KEY_POPUP_STACK_PROMOTIONS_MIGRATION"));
+	gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_POPUP_STACK_PROMOTIONS_MIGRATION_BODY"));
+	gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, gDLL->getText("TXT_KEY_POPUP_YES"), NULL, 1, WIDGET_GENERAL);
+	gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, gDLL->getText("TXT_KEY_POPUP_NO"), NULL, 0, WIDGET_GENERAL);
+	gDLL->getInterfaceIFace()->popupLaunch(pPopup, false, POPUPSTATE_IMMEDIATE);
+	return true;
+}
+
 bool CvDLLButtonPopup::launchNameListPopup(CvPopup* pPopup, CvPopupInfo &info)
 {
 	gDLL->getInterfaceIFace()->popupSetHeaderString(pPopup, "List Name");
@@ -3051,6 +3108,7 @@ bool CvDLLButtonPopup::launchConfirmAmbushPopup(CvPopup* pPopup, CvPopupInfo &in
 	int iY = info.getData3();
 	PlayerTypes ePlayer = GC.getGame().getActivePlayer();
 	CvWStringBuffer szBuffer;
+	CvWStringBuffer szBufferMini;
 	if (ePlayer == NO_PLAYER)
 	{
 		return false;
@@ -3069,7 +3127,13 @@ bool CvDLLButtonPopup::launchConfirmAmbushPopup(CvPopup* pPopup, CvPopupInfo &in
 		return false;
 	}
 
-	GAMETEXT.setCombatPlotHelp(szBuffer, pPlot, bAssassinate);
+	if (GC.getGame().isModderGameOption(MODDERGAMEOPTION_ASSASSINATE_MINIMAL))
+		GAMETEXT.setMinimalCombatPlotHelp(szBuffer, pPlot, bAssassinate);
+	else
+		GAMETEXT.setCombatPlotHelp(szBuffer, pPlot, bAssassinate);
+
+	//CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_TEXT);
+
 	if (bAssassinate)
 	{
 		gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_CONFIRM_ASSASSINATE"));
@@ -3079,8 +3143,50 @@ bool CvDLLButtonPopup::launchConfirmAmbushPopup(CvPopup* pPopup, CvPopupInfo &in
 		gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_CONFIRM_AMBUSH"));
 	}
 
+	if (bAssassinate && GC.getGame().isModderGameOption(MODDERGAMEOPTION_ASSASSINATE_CHOICE))
+	{
+		//Calvitix, give the possibility to choose which Unit will be assassinated : 
+		std::vector<CvUnit*> defenders;
+		CvPlayer & player = GET_PLAYER(GC.getGame().getActivePlayer());
+		CvUnit * pAttacker = pAttacker = player.getUnit(iUnitID);
+		for (int i = 0; i < pPlot->getNumUnits(); ++i)
+		{
+			CvUnit* pUnit = pPlot->getUnitByIndex(i);
+			if (!pUnit)
+				continue;
 
-	gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, CvWString(szBuffer.getCString()), NULL, 1, WIDGET_GENERAL);
+			// Filtrer par propriétaire si nécessaire
+			if (pUnit->getOwner() == NO_PLAYER || pUnit->getOwner() == GC.getGame().getActivePlayer())
+				continue;
+
+			// Vérifie si l’unité peut défendre contre l’attaquant
+			if (pUnit->canDefend(pPlot))
+			{
+				if (!pUnit->isInvisible(pAttacker->getTeam(), false))
+				{
+					defenders.push_back(pUnit);
+				}
+			}
+		}
+
+		int BtnId = 0;
+		//for each defender, create a button : 
+		for (size_t i = 0; i < defenders.size(); ++i)
+		{
+			CvUnit* pDefender = defenders[i];
+			if (pDefender)
+			{
+				BtnId++;
+				szBuffer.clear();
+				GAMETEXT.setAssassinatePlotHelp(szBuffer, pPlot, pAttacker, pDefender);
+				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, CvWString(szBuffer.getCString()), NULL, pDefender->getID(), WIDGET_GENERAL,pAttacker->getID(), pDefender->getID());
+			}
+		}
+	}
+	else
+	{
+		gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, CvWString(szBuffer.getCString()), NULL, 1, WIDGET_GENERAL);
+	}
 	gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, gDLL->getText("TXT_KEY_POPUP_NO"), NULL, 0, WIDGET_GENERAL);
 
 	gDLL->getInterfaceIFace()->popupLaunch(pPopup, false, POPUPSTATE_IMMEDIATE);

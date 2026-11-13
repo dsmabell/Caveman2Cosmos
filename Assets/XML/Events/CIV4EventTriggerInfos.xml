@@ -25,6 +25,118 @@
 		One-off events that happen only once per player
 		-->
 
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_SCAVENGING</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_SCAVENGING</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_SCAVENGING</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>20</iWeight>
+            <bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
+            <UnitsRequired>
+                <UnitType>UNIT_WANDERER</UnitType>
+            </UnitsRequired>
+            <iNumUnits>1</iNumUnits>
+            <Events>
+                <Event>EVENT_SCAVENGING</Event>
+            </Events>
+            <ObsoleteTechs>
+                <ObsoleteTech>TECH_SCAVENGING</ObsoleteTech>
+            </ObsoleteTechs>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_PRIME_STUD</Type>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_PRIME_STUD1_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>8</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_FARM_ANIMAL_HORSE</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <bPickCity>1</bPickCity>
+            <Events>
+                <Event>EVENT_PRIME_STUD_1</Event>
+                <Event>EVENT_PRIME_STUD_2</Event>
+            </Events>
+            <OrPreReqs>
+                <PrereqTech>TECH_EQUINE_DOMESTICATION</PrereqTech>
+            </OrPreReqs>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_WISE_COUNCIL</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_CHILD_WISE_COUNCIL</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_WISE_COUNCIL1_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>5</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_ELDER_COUNCIL</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <bOwnPlot>1</bOwnPlot>
+            <Events>
+                <Event>EVENT_WIZE_COUNCIL_1</Event>
+                <Event>EVENT_WIZE_COUNCIL_2</Event>
+            </Events>
+            <OrPreReqs>
+                <PrereqTech>TECH_CULTURAL_IDENTITY</PrereqTech>
+            </OrPreReqs>
+            <bPickCity>1</bPickCity>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_CHILD_LABOUR_INCIDENT</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_CHILD_LABOUR_INCIDENT</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_CHILD_LABOUR_INCIDENT1_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>5</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_CHILD_LABOR_CREW</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <bOwnPlot>1</bOwnPlot>
+            <bPickCity>1</bPickCity>
+            <Events>
+                <Event>EVENT_CHILD_LABOUR_INCIDENT_1</Event>
+                <Event>EVENT_CHILD_LABOUR_INCIDENT_2</Event>
+                <Event>EVENT_CHILD_LABOUR_INCIDENT_3</Event>
+            </Events>
+            <OrPreReqs>
+                <PrereqTech>TECH_COOPERATION</PrereqTech>
+            </OrPreReqs>
+        </EventTriggerInfo>
+
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_HYMNS_AND_SCULPTURES</Type>
 			<WorldNewsTexts>
@@ -74,41 +186,6 @@
 				<Event>EVENT_HYMNS_AND_SCULPTURES_1</Event>
 			</Events>
 			<bPickCity>1</bPickCity>
-		</EventTriggerInfo>
-
-		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_ICE_SCULPTURE</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_ICE_SCULPTURE</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_ICE_SCULPTURE_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/IceSculptureEvent.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>10</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<bOwnPlot>1</bOwnPlot>
-			<iPlotType>2</iPlotType>
-			<FeaturesRequired>
-				<FeatureType>NONE</FeatureType>
-			</FeaturesRequired>
-			<TerrainsRequired>
-				<TerrainType>TERRAIN_TAIGA</TerrainType>
-				<TerrainType>TERRAIN_TUNDRA</TerrainType>
-				<TerrainType>TERRAIN_ICE</TerrainType>
-			</TerrainsRequired>
-			<Events>
-				<Event>EVENT_ICE_SCULPTURE_1</Event>
-				<Event>EVENT_ICE_SCULPTURE_2</Event>
-			</Events>
-			<OrPreReqs>
-				<PrereqTech>TECH_AESTHETICS</PrereqTech>
-			</OrPreReqs>
-			<bGlobal>1</bGlobal>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -461,34 +538,6 @@
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_SECURITY_TAX</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_SECURITY_TAX</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_SECURITY_TAX_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/SecurityTax.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>20</iWeight>
-			<Events>
-				<Event>EVENT_SECURITY_TAX_1</Event>
-			</Events>
-			<OrPreReqs>
-				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-			</OrPreReqs>
-			<ObsoleteTechs>
-				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
-			</ObsoleteTechs>
-			<bGlobal>1</bGlobal>
-			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>canTriggerSecurityTax</PythonCanDo>
-		</EventTriggerInfo>
-
-		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_LITERACY</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_LITERACY</Text>
@@ -560,7 +609,6 @@
 			</AndPreReqs>
 			<bPickCity>1</bPickCity>
 		</EventTriggerInfo>
-
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_MARBLE_STATUES</Type>
@@ -1226,6 +1274,9 @@
 				<Event>EVENT_DISSIDENT_PRIEST_2</Event>
 				<Event>EVENT_DISSIDENT_PRIEST_3</Event>
 			</Events>
+			<AndPreReqs>
+				<PrereqTech>TECH_KEMETISM</PrereqTech>
+			</AndPreReqs>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 			</ObsoleteTechs>
@@ -1346,7 +1397,6 @@
 			<bShowPlot>0</bShowPlot>
 			<PythonCanDo>canTriggerNapalm</PythonCanDo>
 		</EventTriggerInfo>
-
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_INDUSTRIAL_ACTION</Type>
@@ -2461,92 +2511,70 @@
 		Events that happen only one time in the game
 		-->
 
-		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_PRIME_STUD</Type>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_PRIME_STUD1_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>8</iWeight>
-			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
-			<BuildingsRequired>
-				<Building>BUILDING_FARM_ANIMAL_HORSE</Building>
-			</BuildingsRequired>
-			<iNumBuildings>1</iNumBuildings>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<bOwnPlot>1</bOwnPlot>
-			<Events>
-				<Event>EVENT_PRIME_STUD_1</Event>
-				<Event>EVENT_PRIME_STUD_2</Event>
-			</Events>
-			<OrPreReqs>
-				<PrereqTech>TECH_EQUINE_DOMESTICATION</PrereqTech>
-			</OrPreReqs>
-		</EventTriggerInfo>
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_STONE_TOOL_MAKER</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_STONE_TOOL_MAKER</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_STONE_TOOL_MAKER_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>10</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_STONE_TOOL_MAKER</Building>
+            </BuildingsRequired>
+            <BonusesRequired>
+                <BonusType>BONUS_STONE</BonusType>
+            </BonusesRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <bOwnPlot>1</bOwnPlot>
+            <Events>
+                <Event>EVENT_STONE_TOOL_MAKER_1</Event>
+                <Event>EVENT_STONE_TOOL_MAKER_2</Event>
+            </Events>
+            <bGlobal>1</bGlobal>
+            <bPickCity>1</bPickCity>
+        </EventTriggerInfo>
 
-		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_WISE_COUNCIL</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_CHILD_WISE_COUNCIL</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_WISE_COUNCIL1_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>5</iWeight>
-			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
-			<BuildingsRequired>
-				<Building>BUILDING_ELDER_COUNCIL</Building>
-			</BuildingsRequired>
-			<iNumBuildings>1</iNumBuildings>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<bOwnPlot>1</bOwnPlot>
-			<Events>
-				<Event>EVENT_WIZE_COUNCIL_1</Event>
-				<Event>EVENT_WIZE_COUNCIL_2</Event>
-			</Events>
-			<OrPreReqs>
-				<PrereqTech>TECH_CULTURAL_IDENTITY</PrereqTech>
-			</OrPreReqs>
-			<bPickCity>1</bPickCity>
-		</EventTriggerInfo>
-
-		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_CHILD_LABOUR_INCIDENT</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_CHILD_LABOUR_INCIDENT</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_CHILD_LABOUR_INCIDENT1_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>5</iWeight>
-			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
-			<BuildingsRequired>
-				<Building>BUILDING_CHILD_LABOR_CREW</Building>
-			</BuildingsRequired>
-			<iNumBuildings>1</iNumBuildings>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<bOwnPlot>1</bOwnPlot>
-			<bPickCity>1</bPickCity>
-			<Events>
-				<Event>EVENT_CHILD_LABOUR_INCIDENT_1</Event>
-				<Event>EVENT_CHILD_LABOUR_INCIDENT_2</Event>
-				<Event>EVENT_CHILD_LABOUR_INCIDENT_3</Event>
-			</Events>
-			<OrPreReqs>
-				<PrereqTech>TECH_COOPERATION</PrereqTech>
-			</OrPreReqs>
-		</EventTriggerInfo>
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_ICE_SCULPTURE</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_ICE_SCULPTURE</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_ICE_SCULPTURE_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/IceSculptureEvent.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>10</iWeight>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <iPlotType>2</iPlotType>
+            <FeaturesRequired>
+                <FeatureType>NONE</FeatureType>
+            </FeaturesRequired>
+            <TerrainsRequired>
+                <TerrainType>TERRAIN_TAIGA</TerrainType>
+                <TerrainType>TERRAIN_TUNDRA</TerrainType>
+                <TerrainType>TERRAIN_ICE</TerrainType>
+            </TerrainsRequired>
+            <Events>
+                <Event>EVENT_ICE_SCULPTURE_1</Event>
+                <Event>EVENT_ICE_SCULPTURE_2</Event>
+            </Events>
+            <OrPreReqs>
+                <PrereqTech>TECH_AESTHETICS</PrereqTech>
+            </OrPreReqs>
+            <bGlobal>1</bGlobal>
+        </EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_MAN_NAMED_JED</Type>
@@ -2623,6 +2651,34 @@
 			<bGlobal>1</bGlobal>
 			<bPickCity>1</bPickCity>
 		</EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_SECURITY_TAX</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_SECURITY_TAX</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_SECURITY_TAX_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/SecurityTax.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>20</iWeight>
+            <Events>
+                <Event>EVENT_SECURITY_TAX_1</Event>
+            </Events>
+            <OrPreReqs>
+                <PrereqTech>TECH_METAL_CASTING</PrereqTech>
+            </OrPreReqs>
+            <ObsoleteTechs>
+                <ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
+            </ObsoleteTechs>
+            <bGlobal>1</bGlobal>
+            <bShowPlot>0</bShowPlot>
+            <PythonCanDo>canTriggerSecurityTax</PythonCanDo>
+        </EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_MARATHON</Type>
@@ -3015,6 +3071,10 @@
 			<BonusesRequired>
 				<BonusType>BONUS_HORSE</BonusType>
 			</BonusesRequired>
+            <UnitsRequired>
+                <UnitType>UNIT_HORSEMAN</UnitType>
+            </UnitsRequired>
+            <iNumUnits>3</iNumUnits>
 			<RoutesRequired>
 				<RouteType>ROUTE_TRAIL</RouteType>
 				<RouteType>ROUTE_PATH</RouteType>
@@ -3995,13 +4055,13 @@
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_TEA</Type>
+			<Type>EVENTTRIGGER_TEA_TRADE</Type>
 			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_TEA</Text>
+				<Text>TXT_KEY_EVENTTRIGGER_TEA_TRADE</Text>
 			</WorldNewsTexts>
 			<TriggerTexts>
 				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_TEA_1</Text>
+					<Text>TXT_KEY_EVENT_TRIGGER_TEA_TRADE_1</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>
@@ -4295,82 +4355,6 @@
 			</Events>
 			<bGlobal>1</bGlobal>
 			<bPickCity>1</bPickCity>
-		</EventTriggerInfo>
-
-		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_EXPERIENCED_CAPTAIN</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_EXPERIENCED_CAPTAIN</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_EXPERIENCED_CAPTAIN_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/ExperiencedCaptain.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>200</iWeight>
-			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
-			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
-			<UnitsRequired>
-				<UnitType>UNIT_GALLEY</UnitType>
-				<UnitType>UNIT_WARGALLEY</UnitType>
-				<UnitType>UNIT_TRIREME</UnitType>
-				<UnitType>UNIT_CARAVEL</UnitType>
-				<UnitType>UNIT_GALLEON</UnitType>
-				<UnitType>UNIT_PRIVATEER</UnitType>
-				<UnitType>UNIT_FRIGATE</UnitType>
-				<UnitType>UNIT_SHIP_OF_THE_LINE</UnitType>
-				<UnitType>UNIT_IRONCLAD</UnitType>
-				<UnitType>UNIT_TRANSPORT</UnitType>
-				<UnitType>UNIT_DESTROYER</UnitType>
-				<UnitType>UNIT_STEALTH_DESTROYER</UnitType>
-				<UnitType>UNIT_BATTLESHIP</UnitType>
-				<UnitType>UNIT_MISSILE_CRUISER</UnitType>
-				<UnitType>UNIT_SUBMARINE</UnitType>
-				<UnitType>UNIT_ATTACK_SUBMARINE</UnitType>
-				<UnitType>UNIT_CARRIER</UnitType>
-				<UnitType>UNIT_QUINQUEREME</UnitType>
-				<UnitType>UNIT_SLOOP</UnitType>
-				<UnitType>UNIT_FLUYT</UnitType>
-				<UnitType>UNIT_BRIGANTINE</UnitType>
-				<UnitType>UNIT_MANOWAR</UnitType>
-				<UnitType>UNIT_IRON_FRIGATE</UnitType>
-				<UnitType>UNIT_LANDING_SHIP</UnitType>
-				<UnitType>UNIT_STILETTO_BOAT</UnitType>
-				<UnitType>UNIT_BATTLECRUISER</UnitType>
-				<UnitType>UNIT_STEAM_DESTROYER</UnitType>
-				<UnitType>UNIT_CRUISER</UnitType>
-				<UnitType>UNIT_AEGIS_CRUISER</UnitType>
-				<UnitType>UNIT_NUCLEAR_SUBMARINE</UnitType>
-				<UnitType>UNIT_NUCLEAR_CARRIER</UnitType>
-				<UnitType>UNIT_FF_DESTROYER_I</UnitType>
-				<UnitType>UNIT_FUSION_CRUISER</UnitType>
-				<UnitType>UNIT_FUSION_BATTLESHIP</UnitType>
-				<UnitType>UNIT_FUSION_CARRIER</UnitType>
-				<UnitType>UNIT_FUSION_TRANSPORT</UnitType>
-				<UnitType>UNIT_HEAVY_CRUISER</UnitType>
-				<UnitType>UNIT_WW1_DESTROYER</UnitType>
-				<UnitType>UNIT_PRE_DREADNOUGHT</UnitType>
-				<UnitType>UNIT_DREADNOUGHT_SHIP</UnitType>
-				<UnitType>UNIT_WW2_BATTLESHIP</UnitType>
-				<UnitType>UNIT_EARLY_CARRIER</UnitType>
-				<UnitType>UNIT_LITTORAL_COMBAT_SHIP</UnitType>
-			</UnitsRequired>
-			<iNumUnits>1</iNumUnits>
-			<iUnitExperienceWeight>1</iUnitExperienceWeight>
-			<BuildingsRequired>
-				<Building>BUILDING_DRYDOCK</Building>
-			</BuildingsRequired>
-			<iNumBuildings>1</iNumBuildings>
-			<Events>
-				<Event>EVENT_EXPERIENCED_CAPTAIN_1</Event>
-				<Event>EVENT_EXPERIENCED_CAPTAIN_2</Event>
-			</Events>
-			<bGlobal>1</bGlobal>
-			<bPickCity>1</bPickCity>
-			<PythonCanDo>canTriggerExperiencedCaptain</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -4780,11 +4764,11 @@
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_DARWINS_VOYAGE</Type>
 			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENT_TRIGGER_DARWINS_VOYAGE1</Text>
+				<Text>TXT_KEY_EVENT_TRIGGER_DARWINS_VOYAGE2</Text>
 			</WorldNewsTexts>
 			<TriggerTexts>
 				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_DARWINS_VOYAGE</Text>
+					<Text>TXT_KEY_EVENT_TRIGGER_DARWINS_VOYAGE1</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>
@@ -4827,28 +4811,6 @@
 			<bGlobal>1</bGlobal>
 			<bShowPlot>0</bShowPlot>
 			<PythonCanDo>canTriggerBlackbeard</PythonCanDo>
-		</EventTriggerInfo>
-
-		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_PIRATES_OF_THE_NEUTRAL_ZONES</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENT_WORLD_PIRATES_OF_THE_NEUTRAL_ZONES</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_PIRATES_OF_THE_NEUTRAL_ZONES</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>25</iWeight>
-			<Events>
-				<Event>EVENT_PIRATES_OF_THE_NEUTRAL_ZONES_1</Event>
-				<Event>EVENT_PIRATES_OF_THE_NEUTRAL_ZONES_2</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>canTriggerPiratesoftheNeutralZones</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -5138,7 +5100,7 @@
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_PAPYRUS</Type>
+			<Type>EVENTTRIGGER_PAPYRUS_USAGE</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_PAPYRUS_1</Text>
 				<Text>TXT_KEY_EVENTTRIGGER_PAPYRUS_2</Text>
@@ -6354,7 +6316,7 @@
 				<Event>EVENT_HORSE_WHISPERING_1</Event>
 			</Events>
 			<OrPreReqs>
-				<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
+				<PrereqTech>TECH_ANIMAL_RIDING</PrereqTech>
 			</OrPreReqs>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
@@ -7263,6 +7225,7 @@
 				<Event>EVENT_ALTERNATIVE_ENERGY_1</Event>
 			</PrereqEvents>
 			<bShowPlot>0</bShowPlot>
+            <bGlobal>1</bGlobal>
 			<PythonCanDo>canTriggerAlternativeEnergyDone</PythonCanDo>
 		</EventTriggerInfo>
 
@@ -7270,34 +7233,121 @@
         Recurring regular events
         -->
 
-<!--		<EventTriggerInfo>-->
-<!--			<Type>EVENTTRIGGER_SALTPE</Type>-->
-<!--			<WorldNewsTexts>-->
-<!--				<Text>TXT_KEY_EVENTTRIGGER_SALTPETER</Text>-->
-<!--			</WorldNewsTexts>-->
-<!--			<TriggerTexts>-->
-<!--				<TriggerText>-->
-<!--					<Text>TXT_KEY_EVENT_TRIGGER_SALTPETER_1</Text>-->
-<!--					<Era>NONE</Era>-->
-<!--				</TriggerText>-->
-<!--			</TriggerTexts>-->
-<!--			<EventArt>Art/Event_Images/SaltpeterEvent.dds</EventArt>-->
-<!--			<iPercentGamesActive>100</iPercentGamesActive>-->
-<!--			<iWeight>5</iWeight>-->
-<!--			<iNumPlotsRequired>4</iNumPlotsRequired>-->
-<!--			<bOwnPlot>1</bOwnPlot>-->
-<!--			<iPlotType>1</iPlotType>-->
-<!--			<FeaturesRequired>-->
-<!--				<FeatureType>FEATURE_FOREST</FeatureType>-->
-<!--			</FeaturesRequired>-->
-<!--			<Events>-->
-<!--				<Event>EVENT_SALTPETER_1</Event>-->
-<!--			</Events>-->
-<!--			<OrPreReqs>-->
-<!--				<PrereqTech>TECH_GUNPOWDER</PrereqTech>-->
-<!--			</OrPreReqs>-->
-<!--			<bGlobal>1</bGlobal>-->
-<!--		</EventTriggerInfo>-->
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_PALISADE</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_PALISADE</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_PALISADE_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>3</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_PALISADE</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <bPickCity>1</bPickCity>
+            <Events>
+                <Event>EVENT_PALISADE_1</Event>
+                <Event>EVENT_PALISADE_2</Event>
+                <Event>EVENT_PALISADE_3</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_EARTH_WALL</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_EARTH_WALL</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_EARTH_WALL_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>3</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_EARTH_WALL</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <bPickCity>1</bPickCity>
+            <Events>
+                <Event>EVENT_EARTH_WALL_1</Event>
+                <Event>EVENT_EARTH_WALL_2</Event>
+                <Event>EVENT_EARTH_WALL_3</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_WALLS</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_WALLS</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_WALLS_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>3</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_WALLS</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <bPickCity>1</bPickCity>
+            <Events>
+                <Event>EVENT_WALLS_1</Event>
+                <Event>EVENT_WALLS_2</Event>
+                <Event>EVENT_WALLS_3</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_HIGH_WALLS</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_HIGH_WALLS</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_HIGH_WALLS_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>3</iWeight>
+            <bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+            <BuildingsRequired>
+                <Building>BUILDING_HIGH_WALLS</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <bPickCity>1</bPickCity>
+            <Events>
+                <Event>EVENT_HIGH_WALLS_1</Event>
+                <Event>EVENT_HIGH_WALLS_2</Event>
+                <Event>EVENT_HIGH_WALLS_3</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_FOREST_FIRE</Type>
@@ -7386,6 +7436,9 @@
 				<Event>EVENT_FOREST_FIRE_2</Event>
 				<Event>EVENT_FOREST_FIRE_3</Event>
 			</Events>
+			<OrPreReqs>
+				<PrereqTech>TECH_SEDENTARY_LIFESTYLE</PrereqTech>
+			</OrPreReqs>
 			<bOwnPlot>1</bOwnPlot>
 			<bRecurring>1</bRecurring>
 		</EventTriggerInfo>
@@ -7403,7 +7456,7 @@
 			</TriggerTexts>
 			<EventArt>Art/Event_Images/ForestFireEvent.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>4</iWeight>
+			<iWeight>3</iWeight>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
@@ -7413,6 +7466,9 @@
 				<Event>EVENT_FOREST_MASSIVE_WILDFIRE_2</Event>
 				<Event>EVENT_FOREST_MASSIVE_WILDFIRE_3</Event>
 			</Events>
+			<OrPreReqs>
+				<PrereqTech>TECH_SEDENTARY_LIFESTYLE</PrereqTech>
+			</OrPreReqs>
 			<bOwnPlot>1</bOwnPlot>
 			<bRecurring>1</bRecurring>
 		</EventTriggerInfo>
@@ -7516,13 +7572,14 @@
 			</TriggerTexts>
 			<EventArt>Art/Event_Images/HappyHuntingEvent.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>150</iWeight>
+			<iWeight>100</iWeight>
 			<iAngry>-1</iAngry>
 			<iUnhealthy>-1</iUnhealthy>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
+				<FeatureType>FEATURE_FOREST_ANCIENT</FeatureType>
 			</FeaturesRequired>
 			<Events>
 				<Event>EVENT_HAPPY_HUNTING_1</Event>
@@ -7536,6 +7593,92 @@
 			</ObsoleteTechs>
 			<bRecurring>1</bRecurring>
 		</EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_FISH_FOUND</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_FISH_FOUND</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_FISH_FOUND_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>20</iWeight>
+            <iAngry>-1</iAngry>
+            <iUnhealthy>-1</iUnhealthy>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <TerrainsRequired>
+                <TerrainType>TERRAIN_COAST</TerrainType>
+                <TerrainType>TERRAIN_COAST_TROPICAL</TerrainType>
+                <TerrainType>TERRAIN_LAKE_SHORE</TerrainType>
+            </TerrainsRequired>
+            <Events>
+                <Event>EVENT_FISH_FOUND_1</Event>
+                <Event>EVENT_FISH_FOUND_2</Event>
+            </Events>
+            <OrPreReqs>
+                <PrereqTech>TECH_SCAVENGING</PrereqTech>
+            </OrPreReqs>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_WHALE_FOUND</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_WHALE_FOUND</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_WHALE_FOUND_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>5</iWeight>
+            <iAngry>-1</iAngry>
+            <iUnhealthy>-1</iUnhealthy>
+            <iNumPlotsRequired>1</iNumPlotsRequired>
+            <bOwnPlot>1</bOwnPlot>
+            <TerrainsRequired>
+                <TerrainType>TERRAIN_COAST</TerrainType>
+                <TerrainType>TERRAIN_COAST_POLAR</TerrainType>
+                <TerrainType>TERRAIN_COAST_TROPICAL</TerrainType>
+            </TerrainsRequired>
+            <Events>
+                <Event>EVENT_WHALE_FOUND_1</Event>
+                <Event>EVENT_WHALE_FOUND_2</Event>
+            </Events>
+            <OrPreReqs>
+                <PrereqTech>TECH_SCAVENGING</PrereqTech>
+            </OrPreReqs>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_PIRATES_OF_THE_NEUTRAL_ZONES</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENT_WORLD_PIRATES_OF_THE_NEUTRAL_ZONES</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_PIRATES_OF_THE_NEUTRAL_ZONES</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>25</iWeight>
+            <Events>
+                <Event>EVENT_PIRATES_OF_THE_NEUTRAL_ZONES_1</Event>
+                <Event>EVENT_PIRATES_OF_THE_NEUTRAL_ZONES_2</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+            <bShowPlot>0</bShowPlot>
+            <PythonCanDo>canTriggerPiratesoftheNeutralZones</PythonCanDo>
+        </EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_GREAT_STORY</Type>
@@ -7565,6 +7708,7 @@
 			<iNumBuildings>1</iNumBuildings>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
+			<bPickCity>1</bPickCity>
 			<Events>
 				<Event>EVENT_GREAT_STORY_1</Event>
 				<Event>EVENT_GREAT_STORY_2</Event>
@@ -7627,6 +7771,7 @@
 			<iNumBuildings>1</iNumBuildings>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
+			<bPickCity>1</bPickCity>
 			<Events>
 				<Event>EVENT_COMMUNITY_BOND</Event>
 			</Events>
@@ -7656,6 +7801,7 @@
 			<iNumBuildings>1</iNumBuildings>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
+			<bPickCity>1</bPickCity>
 			<Events>
 				<Event>EVENT_BONUS_TAX_PREHISTORIC</Event>
 			</Events>
@@ -7688,6 +7834,7 @@
             <iNumBuildings>1</iNumBuildings>
             <iNumPlotsRequired>1</iNumPlotsRequired>
             <bOwnPlot>1</bOwnPlot>
+            <bPickCity>1</bPickCity>
             <Events>
                 <Event>EVENT_BONUS_TAX_CLASSIC</Event>
             </Events>
@@ -7720,6 +7867,7 @@
 			<iNumBuildings>1</iNumBuildings>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
+			<bPickCity>1</bPickCity>
 			<Events>
 				<Event>EVENT_BONUS_TAX_MODERN</Event>
 			</Events>
@@ -9938,7 +10086,6 @@
 			<bRecurring>1</bRecurring>
 		</EventTriggerInfo>
 
-
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_SQUASH</Type>
 			<WorldNewsTexts>
@@ -10904,7 +11051,7 @@
 			</TriggerTexts>
 			<EventArt>Art/Event_Images/InfluenzaEvent.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>40</iWeight>
+			<iWeight>30</iWeight>
 			<iMinPopulation>4</iMinPopulation>
 			<BuildingsRequired>
 				<Building>BUILDING_DISEASE_COMMON_COLD</Building>
@@ -10919,6 +11066,64 @@
 			<bPickCity>1</bPickCity>
 			<PythonCanDo>canTriggerInfluenza</PythonCanDo>
 		</EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_INFLUENZA1</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_INFLUENZA</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_INFLUENZA_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/InfluenzaEvent.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>30</iWeight>
+            <iMinPopulation>6</iMinPopulation>
+            <BuildingsRequired>
+                <Building>BUILDING_DISEASE_COMMON_COLD</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <bOwnPlot>1</bOwnPlot>
+            <Events>
+                <Event>EVENT_INFLUENZA_3</Event>
+                <Event>EVENT_INFLUENZA_4</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+            <bPickCity>1</bPickCity>
+            <PythonCanDo>canTriggerInfluenza</PythonCanDo>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_INFLUENZA2</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_INFLUENZA</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_INFLUENZA_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/InfluenzaEvent.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>30</iWeight>
+            <iMinPopulation>8</iMinPopulation>
+            <BuildingsRequired>
+                <Building>BUILDING_DISEASE_COMMON_COLD</Building>
+            </BuildingsRequired>
+            <iNumBuildings>1</iNumBuildings>
+            <bOwnPlot>1</bOwnPlot>
+            <Events>
+                <Event>EVENT_INFLUENZA_5</Event>
+                <Event>EVENT_INFLUENZA_6</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+            <bPickCity>1</bPickCity>
+            <PythonCanDo>canTriggerInfluenza</PythonCanDo>
+        </EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_ANTELOPE</Type>
@@ -11030,7 +11235,7 @@
 				<FeatureType>NONE</FeatureType>
 			</FeaturesRequired>
 			<Events>
-				<Event>EVENT_FOUND_CLAM</Event>
+				<Event>EVENT_FOUND_MUREX</Event>
 			</Events>
 			<OrPreReqs>
 				<PrereqTech>TECH_FISHING</PrereqTech>
@@ -12585,8 +12790,6 @@
 			<bRecurring>1</bRecurring>
 		</EventTriggerInfo>
 
-
-
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_HIYOSILVER</Type>
 			<WorldNewsTexts>
@@ -13440,6 +13643,7 @@
 				<Event>EVENT_MERCENARIES_ANCIENT_1</Event>
 				<Event>EVENT_MERCENARIES_ANCIENT_2</Event>
 				<Event>EVENT_MERCENARIES_ANCIENT_3</Event>
+				<Event>EVENT_MERCENARIES_ANCIENT_4</Event>
 			</Events>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_IRON_WORKING</ObsoleteTech>
@@ -13558,6 +13762,186 @@
 			</Events>
 			<bRecurring>1</bRecurring>
 		</EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_SMALL_EARTHQUAKE</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_EARTHQUAKE_SMALL</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_SMALL_EARTHQUAKE_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/Earthquake.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>5</iWeight>
+            <bPickCity>1</bPickCity>
+            <AndPreReqs>
+                <PrereqTech>TECH_SHELTER_BUILDING</PrereqTech>
+            </AndPreReqs>
+            <Events>
+                <Event>EVENT_SMALL_EARTHQUAKE_1</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_MEDIUM_EARTHQUAKE</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_EARTHQUAKE_MEDIUM</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_MEDIUM_EARTHQUAKE_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/Earthquake.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>4</iWeight>
+            <bPickCity>1</bPickCity>
+            <AndPreReqs>
+                <PrereqTech>TECH_SHELTER_BUILDING</PrereqTech>
+            </AndPreReqs>
+            <Events>
+                <Event>EVENT_MEDIUM_EARTHQUAKE_1</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_STRONG_EARTHQUAKE</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_EARTHQUAKE_STRONG</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_STRONG_EARTHQUAKE_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/Earthquake.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>3</iWeight>
+            <bPickCity>1</bPickCity>
+            <AndPreReqs>
+                <PrereqTech>TECH_SHELTER_BUILDING</PrereqTech>
+            </AndPreReqs>
+            <Events>
+                <Event>EVENT_STRONG_EARTHQUAKE_1</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_HUGE_EARTHQUAKE</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_EARTHQUAKE_HUGE</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_HUGE_EARTHQUAKE_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/Earthquake.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>2</iWeight>
+            <bPickCity>1</bPickCity>
+            <AndPreReqs>
+                <PrereqTech>TECH_SHELTER_BUILDING</PrereqTech>
+            </AndPreReqs>
+            <Events>
+                <Event>EVENT_HUGE_EARTHQUAKE_1</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_APOCALYPTIC_EARTHQUAKE</Type>
+            <WorldNewsTexts>
+                <Text>TXT_KEY_EVENTTRIGGER_EARTHQUAKE_APOCALYPTIC</Text>
+            </WorldNewsTexts>
+            <TriggerTexts>
+                <TriggerText>
+                    <Text>TXT_KEY_EVENT_TRIGGER_APOCALYPTIC_EARTHQUAKE_1</Text>
+                    <Era>NONE</Era>
+                </TriggerText>
+            </TriggerTexts>
+            <EventArt>Art/Event_Images/Earthquake.dds</EventArt>
+            <iPercentGamesActive>100</iPercentGamesActive>
+            <iWeight>1</iWeight>
+            <bPickCity>1</bPickCity>
+            <AndPreReqs>
+                <PrereqTech>TECH_SHELTER_BUILDING</PrereqTech>
+            </AndPreReqs>
+            <Events>
+                <Event>EVENT_APOCALYPTIC_EARTHQUAKE_1</Event>
+            </Events>
+            <bRecurring>1</bRecurring>
+        </EventTriggerInfo>
+
+<!--        <EventTriggerInfo>-->
+<!--            <Type>EVENTTRIGGER_TORNADO</Type>-->
+<!--            <WorldNewsTexts>-->
+<!--                <Text>TXT_KEY_EVENTTRIGGER_TORNADO_1</Text>-->
+<!--                <Text>TXT_KEY_EVENTTRIGGER_TORNADO_2</Text>-->
+<!--            </WorldNewsTexts>-->
+<!--            <TriggerTexts>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_1</Text>-->
+<!--                    <Era>C2C_ERA_ANCIENT</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_1</Text>-->
+<!--                    <Era>C2C_ERA_CLASSICAL</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_1</Text>-->
+<!--                    <Era>C2C_ERA_MEDIEVAL</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_2</Text>-->
+<!--                    <Era>C2C_ERA_RENAISSANCE</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_2</Text>-->
+<!--                    <Era>C2C_ERA_INDUSTRIAL</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_3</Text>-->
+<!--                    <Era>C2C_ERA_ATOMIC</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_3</Text>-->
+<!--                    <Era>C2C_ERA_INFORMATION</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_3</Text>-->
+<!--                    <Era>C2C_ERA_NANOTECH</Era>-->
+<!--                </TriggerText>-->
+<!--                <TriggerText>-->
+<!--                    <Text>TXT_KEY_EVENT_TRIGGER_TORNADO_3</Text>-->
+<!--                    <Era>C2C_ERA_TRANSHUMAN</Era>-->
+<!--                </TriggerText>-->
+<!--            </TriggerTexts>-->
+<!--            <EventArt>Art/Event_Images/TornadoEvent.dds</EventArt>-->
+<!--            <iPercentGamesActive>100</iPercentGamesActive>-->
+<!--            <iWeight>40</iWeight>-->
+<!--            <iNumPlotsRequired>1</iNumPlotsRequired>-->
+<!--            <bOwnPlot>1</bOwnPlot>-->
+<!--            <iPlotType>2</iPlotType>-->
+<!--            <Events>-->
+<!--                <Event>EVENT_TORNADO</Event>-->
+<!--            </Events>-->
+<!--            <ObsoleteTechs>-->
+<!--                <ObsoleteTech>TECH_WEATHER_CONTROL</ObsoleteTech>-->
+<!--            </ObsoleteTechs>-->
+<!--            <bRecurring>1</bRecurring>-->
+<!--            <PythonCanDo>canDoTornado</PythonCanDo>-->
+<!--        </EventTriggerInfo>-->
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_ASSASSIN_DISCOVERED</Type>
@@ -14075,6 +14459,7 @@
 			<iNumBuildings>1</iNumBuildings>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
+			<bPickCity>1</bPickCity>
 			<ImprovementsRequired>
 				<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
 			</ImprovementsRequired>
@@ -14114,6 +14499,7 @@
 				<Event>EVENT_FORT_IN_DISREPAIR_2</Event>
 			</Events>
 			<bRecurring>1</bRecurring>
+			<PythonCanDo>canTriggerFortInDisrepair</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -14262,7 +14648,7 @@
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_BEAVER_MIGRATION</Type>
+			<Type>EVENTTRIGGER_GUINEA_PIGS_MIGRATION</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_GAME_MIGRATION</Text>
 			</WorldNewsTexts>
@@ -15121,6 +15507,7 @@
 			<iNumUnits>1</iNumUnits>
 			<iUnitDistanceWeight>-1</iUnitDistanceWeight>
 			<bUnitsOnPlot>1</bUnitsOnPlot>
+			<bNotOnCity>1</bNotOnCity>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
@@ -15130,6 +15517,9 @@
 			<RoutesRequired>
 				<RouteType>NONE</RouteType>
 			</RoutesRequired>
+			<NotImprovementsRequired>
+				<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+			</NotImprovementsRequired>
 			<Events>
 				<Event>EVENT_STUCK_IN_SWAMP_1</Event>
 			</Events>
@@ -15175,6 +15565,7 @@
 				<Event>EVENT_FORTIFIED_CAVE_IN_DISREPAIR_2</Event>
 			</Events>
 			<bRecurring>1</bRecurring>
+			<PythonCanDo>canTriggerFortInDisrepair</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -15201,6 +15592,7 @@
 				<Event>EVENT_ABATIS_IN_DISREPAIR_2</Event>
 			</Events>
 			<bRecurring>1</bRecurring>
+			<PythonCanDo>canTriggerFortInDisrepair</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -15227,6 +15619,7 @@
 				<Event>EVENT_PALISADE_IN_DISREPAIR_2</Event>
 			</Events>
 			<bRecurring>1</bRecurring>
+			<PythonCanDo>canTriggerFortInDisrepair</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -15253,6 +15646,7 @@
 				<Event>EVENT_BUNKER_IN_DISREPAIR_2</Event>
 			</Events>
 			<bRecurring>1</bRecurring>
+			<PythonCanDo>canTriggerFortInDisrepair</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -15279,6 +15673,7 @@
 				<Event>EVENT_FUTURE_BUNKER_IN_DISREPAIR_2</Event>
 			</Events>
 			<bRecurring>1</bRecurring>
+			<PythonCanDo>canTriggerFortInDisrepair</PythonCanDo>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -15316,142 +15711,26 @@
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_VOLCANO_ERUPTION_EXTINCT</Type>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_VOLCANO_EXTINCT</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<TerrainsRequired>
-				<TerrainType>TERRAIN_ROCKY</TerrainType>
-				<TerrainType>TERRAIN_BADLAND</TerrainType>
-				<TerrainType>TERRAIN_JAGGED</TerrainType>
-			</TerrainsRequired>
-			<BonusesRequired>
-				<BonusType>BONUS_OBSIDIAN</BonusType>
-				<BonusType>BONUS_SULPHUR</BonusType>
-			</BonusesRequired>
-			<Events>
-				<Event>EVENT_VOLCANO_ERUPTION</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<PythonCanDo>canDoNewVolcano</PythonCanDo>
-			<PythonCallback>doVolcanoNewEruption</PythonCallback>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_VOLCANO_ERUPTION_NEW</Type>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_VOLCANO_NEW</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<Events>
-				<Event>EVENT_VOLCANO_ERUPTION</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>canDoNewVolcano</PythonCanDo>
-			<PythonCallback>doVolcanoNewEruption</PythonCallback>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_VOLCANO_GOES_EXTINCT</Type>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_VOLCANO_EXTINCTION</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>2</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<FeaturesRequired>
-				<FeatureType>FEATURE_VOLCANO_DORMANT</FeatureType>
-			</FeaturesRequired>
-			<Events>
-				<Event>EVENT_VOLCANO_EXTINCTION</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>canDoOldVolcano</PythonCanDo>
-			<PythonCallback>doVolcanoExtinction</PythonCallback>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_VOLCANO_ERUPTION_DORMANT</Type>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_VOLCANO_DORMANT</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>5</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<FeaturesRequired>
-				<FeatureType>FEATURE_VOLCANO_DORMANT</FeatureType>
-			</FeaturesRequired>
-			<Events>
-				<Event>EVENT_VOLCANO_ERUPTION</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>canDoOldVolcano</PythonCanDo>
-			<PythonCallback>doVolcanoDormantEruption</PythonCallback>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_VOLCANO_ERUPTION_ACTIVE</Type>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_VOLCANO_TRIGGER_ACTIVE</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>10</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<FeaturesRequired>
-				<FeatureType>FEATURE_VOLCANO_ACTIVE</FeatureType>
-			</FeaturesRequired>
-			<Events>
-				<Event>EVENT_VOLCANO_ERUPTION</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>canDoOldVolcano</PythonCanDo>
-			<PythonCallback>doVolcanoExistingEruption</PythonCallback>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_VOLCANO_GOES_DORMANT</Type>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_VOLCANO_SLEEP</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>10</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<FeaturesRequired>
-				<FeatureType>FEATURE_VOLCANO_ACTIVE</FeatureType>
-			</FeaturesRequired>
-			<Events>
-				<Event>EVENT_VOLCANO_SLEEP</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bShowPlot>0</bShowPlot>
-			<PythonCanDo>canDoOldVolcano</PythonCanDo>
-			<PythonCallback>doVolcanoSleep</PythonCallback>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -15470,10 +15749,14 @@
 			<iWeight>120</iWeight>
 			<iNumUnits>1</iNumUnits>
 			<bUnitsOnPlot>1</bUnitsOnPlot>
+			<bNotOnCity>1</bNotOnCity>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_DUNES</TerrainType>
 			</TerrainsRequired>
+			<NotImprovementsRequired>
+				<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+			</NotImprovementsRequired>
 			<Events>
 				<Event>EVENT_QUICKSAND_1</Event>
 				<Event>EVENT_QUICKSAND_2</Event>
@@ -15483,149 +15766,22 @@
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CITY_FIRE_LOWEST</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_CITYFIRE</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_CITYFIRE_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/cityfire1.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>100</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<Events>
-				<Event>EVENT_CITYFIRE_1</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bPickCity>1</bPickCity>
-			<PrereqMinProperties>
-				<Property>
-					<PropertyType>PROPERTY_FLAMMABILITY</PropertyType>
-					<iPropertyValue>5</iPropertyValue>
-				</Property>
-			</PrereqMinProperties>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CITY_FIRE_LOW</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_CITYFIRE</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_CITYFIRE_2</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/cityfire2.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>80</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<Events>
-				<Event>EVENT_CITYFIRE_2</Event>
-				<Event>EVENT_CITYFIRE_3</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bPickCity>1</bPickCity>
-			<PrereqMinProperties>
-				<Property>
-					<PropertyType>PROPERTY_FLAMMABILITY</PropertyType>
-					<iPropertyValue>25</iPropertyValue>
-				</Property>
-			</PrereqMinProperties>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CITY_FIRE_MEDIUM</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_CITYFIRE</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_CITYFIRE_3</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/cityfire3.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>40</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<Events>
-				<Event>EVENT_CITYFIRE_4</Event>
-				<Event>EVENT_CITYFIRE_5</Event>
-				<Event>EVENT_CITYFIRE_6</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bPickCity>1</bPickCity>
-			<PrereqMinProperties>
-				<Property>
-					<PropertyType>PROPERTY_FLAMMABILITY</PropertyType>
-					<iPropertyValue>50</iPropertyValue>
-				</Property>
-			</PrereqMinProperties>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CITY_FIRE_HIGH</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_CITYFIRE</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_CITYFIRE_4</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/cityfire4.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>10</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<Events>
-				<Event>EVENT_CITYFIRE_7</Event>
-				<Event>EVENT_CITYFIRE_8</Event>
-				<Event>EVENT_CITYFIRE_9</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bPickCity>1</bPickCity>
-			<PrereqMinProperties>
-				<Property>
-					<PropertyType>PROPERTY_FLAMMABILITY</PropertyType>
-					<iPropertyValue>100</iPropertyValue>
-				</Property>
-			</PrereqMinProperties>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CITY_FIRE_HIGHEST</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_CITYFIRE</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_CITYFIRE_5</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<EventArt>Art/Event_Images/cityfire5.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1</iWeight>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<Events>
-				<Event>EVENT_CITYFIRE_10</Event>
-				<Event>EVENT_CITYFIRE_11</Event>
-				<Event>EVENT_CITYFIRE_12</Event>
-			</Events>
-			<bRecurring>1</bRecurring>
-			<bPickCity>1</bPickCity>
-			<PrereqMinProperties>
-				<Property>
-					<PropertyType>PROPERTY_FLAMMABILITY</PropertyType>
-					<iPropertyValue>150</iPropertyValue>
-				</Property>
-			</PrereqMinProperties>
 		</EventTriggerInfo>
 
 		<EventTriggerInfo>
@@ -15721,10 +15877,14 @@
 			<iWeight>200</iWeight>
 			<iNumUnits>1</iNumUnits>
 			<bUnitsOnPlot>1</bUnitsOnPlot>
+			<bNotOnCity>1</bNotOnCity>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_TAR_PIT</FeatureType>
 			</FeaturesRequired>
+			<NotImprovementsRequired>
+				<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+			</NotImprovementsRequired>
 			<Events>
 				<Event>EVENT_TARPIT_1</Event>
 				<Event>EVENT_TARPIT_2</Event>
@@ -16021,6 +16181,9 @@
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_BONUS_TAX</Type>
 		</EventTriggerInfo>
+        <EventTriggerInfo>
+            <Type>EVENTTRIGGER_TORNADO</Type>
+        </EventTriggerInfo>
 		<!-- !SAVEBREAK -->
 	</EventTriggerInfos>
 </Civ4EventTriggerInfos>

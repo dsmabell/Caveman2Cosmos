@@ -21,10 +21,10 @@
 				<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>4120</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>2</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_EXPENSIVE</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -57,6 +57,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_CENTAUR</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -71,11 +72,11 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ANCIENT_WAY_OF_THE_CENTAUR</ArtDefineTag>
 			<PrereqTech>TECH_ANIMAL_RIDING</PrereqTech>
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
-			<iCost>444</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<iCost>588</iCost>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_MOUNTED</UnitCombatProd>
@@ -102,6 +103,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_CENTAUR</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_FEATHER</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -117,10 +119,10 @@
 			<PrereqTech>TECH_ARCHERY</PrereqTech>
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<iCost>472</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_ARCHER</UnitCombatProd>
@@ -147,6 +149,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_FEATHER</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_FIST</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -162,10 +165,10 @@
 			<PrereqTech>TECH_COMMUNITY</PrereqTech>
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<iCost>472</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_LAW_ENFORCEMENT</UnitCombatProd>
@@ -192,6 +195,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_FIST</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_LEECH</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -206,10 +210,10 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ANCIENT_WAY_OF_THE_LEECH</ArtDefineTag>
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<iCost>444</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_HEALTH_CARE</UnitCombatProd>
@@ -236,6 +240,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_LEECH</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_SHADOWS</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -251,10 +256,10 @@
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<PrereqTech>TECH_CONSCIOUSNESS</PrereqTech>
 			<iCost>500</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_CRIMINAL</UnitCombatProd>
@@ -289,6 +294,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_SHADOWS</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_WARRIOR</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -304,10 +310,10 @@
 			<PrereqTech>TECH_OBSIDIAN_WEAPONS</PrereqTech>
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<iCost>444</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_MELEE</UnitCombatProd>
@@ -334,6 +340,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_WARRIOR</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_WAVES</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -351,10 +358,10 @@
 			<PrereqTech>TECH_BOAT_BUILDING</PrereqTech>
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<iCost>444</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_NAVAL_COMBATANT</UnitCombatProd>
@@ -381,6 +388,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_WAVES</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_WILD</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -396,10 +404,10 @@
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<PrereqTech>TECH_HUNTING</PrereqTech>
 			<iCost>444</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_EXPLORER</UnitCombatProd>
@@ -426,6 +434,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_WILD</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_WIND</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -441,10 +450,10 @@
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<PrereqTech>TECH_ATLATL_MAKING</PrereqTech>
 			<iCost>444</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_THROWING</UnitCombatProd>
@@ -471,6 +480,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_WIND</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ANCIENT_WAY_OF_THE_WOLF</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -488,10 +498,10 @@
 			</PrereqBonuses>
 			<ObsoleteTech>TECH_CLASSICAL_LIFESTYLE</ObsoleteTech>
 			<iCost>444</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_CANINE</UnitCombatProd>
@@ -518,6 +528,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ANCIENT_WAY_OF_THE_WOLF</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_PC_CAVE_OF_ALTAMIRA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -541,16 +552,18 @@
 			</PrereqOrFeature>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>40</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>3</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
 			</CommerceChanges>
 			<PropertyManipulators>
 				<PropertySource>
@@ -563,6 +576,7 @@
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_AQUARIUS</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -585,10 +599,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>864</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_WOODEN_SHIPS</UnitCombatProd>
@@ -616,6 +630,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_AQUARIUS</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_ARIES</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -638,10 +653,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>936</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_LAW_ENFORCEMENT</UnitCombatProd>
@@ -669,6 +684,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_ARIES</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_CANCER</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -691,10 +707,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>864</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_HEALS_AS_PEOPLE</UnitCombatProd>
@@ -726,6 +742,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_CANCER</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_CAPRICORN</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -748,10 +765,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>864</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_WOODEN_SHIPS</UnitCombatProd>
@@ -782,6 +799,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_CAPRICORN</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_GEMINI</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -804,10 +822,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>900</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_SIEGE</UnitCombatProd>
@@ -838,6 +856,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_GEMINI</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_LEO</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -860,10 +879,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>864</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_MELEE</UnitCombatProd>
@@ -891,6 +910,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_LEO</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_LIBRA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -913,10 +933,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>900</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_ARCHER</UnitCombatProd>
@@ -948,6 +968,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_LIBRA</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_PISCES</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -970,10 +991,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>900</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_MOUNTED</UnitCombatProd>
@@ -1005,6 +1026,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_PISCES</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_SAGITTARIUS</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1027,10 +1049,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>900</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_MOUNTED</UnitCombatProd>
@@ -1060,6 +1082,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_SAGITTARIUS</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_SCORPIO</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1082,10 +1105,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>936</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_LAW_ENFORCEMENT</UnitCombatProd>
@@ -1118,6 +1141,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_SCORPIO</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_TAURUS</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1140,10 +1164,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>900</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_ARCHER</UnitCombatProd>
@@ -1177,6 +1201,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_TAURUS</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_ASTROLOGICAL_INFLUENCE_OF_VIRGO</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1199,10 +1224,10 @@
 				<BuildingType>BUILDING_OBSERVATORY</BuildingType>
 			</PrereqOrBuildings>
 			<iCost>900</iCost>
-			<iCostSizeModifier>0</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>0</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_SMALL</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_CHEAP</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<UnitCombatProdModifiers>
 				<UnitCombatProdModifier>
 					<UnitCombatProd>UNITCOMBAT_SIEGE</UnitCombatProd>
@@ -1230,6 +1255,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_ASTROLOGICAL_INFLUENCE_OF_VIRGO</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_LL_BLACKWATER_DRAW</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1242,10 +1268,10 @@
 			<PrereqTech>TECH_BONE_WORKING</PrereqTech>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>180</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<YieldChanges>
@@ -1253,15 +1279,25 @@
 				<iYield>2</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>3</iCommerce>
 			</CommerceChanges>
 			<iAsset>10</iAsset>
 			<iConquestProb>100</iConquestProb>
 			<bCenterInCity>1</bCenterInCity>
 			<fVisibilityPriority>1</fVisibilityPriority>
+			<PropertyManipulators>
+				<PropertySource>
+					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
+					<PropertyType>PROPERTY_TOURISM</PropertyType>
+					<iAmountPerTurn>5</iAmountPerTurn>
+				</PropertySource>
+			</PropertyManipulators>
 			<ArtDefineTag>ART_DEF_BUILDING_LL_BLACKWATER_DRAW</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BLACKWATER_DRAW</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_PC_BLOMBOS_CAVE</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1286,17 +1322,19 @@
 			</PrereqOrFeature>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>40</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
-			<CommerceChanges>
-				<iCommerce>3</iCommerce>
-			</CommerceChanges>
+            <CommerceChanges>
+                <iCommerce>0</iCommerce>
+                <iCommerce>0</iCommerce>
+                <iCommerce>4</iCommerce>
+            </CommerceChanges>
 			<PropertyManipulators>
 				<PropertySource>
 					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
@@ -1308,6 +1346,7 @@
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_PC_BLUEFISH_CAVES</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1349,17 +1388,19 @@
 			</PrereqOrFeature>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>40</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
-			<CommerceChanges>
-				<iCommerce>3</iCommerce>
-			</CommerceChanges>
+            <CommerceChanges>
+                <iCommerce>0</iCommerce>
+                <iCommerce>0</iCommerce>
+                <iCommerce>4</iCommerce>
+            </CommerceChanges>
 			<PropertyManipulators>
 				<PropertySource>
 					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
@@ -1371,6 +1412,7 @@
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_LL_CACTUS_HILL</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1388,21 +1430,31 @@
 			<PrereqTech>TECH_AXE_MAKING</PrereqTech>
 			<ObsoleteTech>TECH_POTTERY</ObsoleteTech>
 			<iCost>224</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>2</iYield>
 				<iYield>5</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>3</iCommerce>
 			</CommerceChanges>
 			<iAsset>10</iAsset>
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
+			<PropertyManipulators>
+				<PropertySource>
+					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
+					<PropertyType>PROPERTY_TOURISM</PropertyType>
+					<iAmountPerTurn>5</iAmountPerTurn>
+				</PropertySource>
+			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_DW_CHAMPAGNE</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1425,10 +1477,10 @@
 				<BuildingType>BUILDING_ORDINANCE_ALCOHOL_PROHIBITION</BuildingType>
 			</ReplacementBuildings>
 			<iCost>1280</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<ExtraFreeBonuses>
 				<ExtraFreeBonus>
 					<FreeBonus>BONUS_WINE_CHAMPAGNE</FreeBonus>
@@ -1450,6 +1502,7 @@
 			<iHurryCostModifier>250</iHurryCostModifier>
 			<bNukeImmune>1</bNukeImmune>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_PC_CHARLIE_LAKE_CAVE</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1479,17 +1532,19 @@
 			</PrereqOrFeature>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>40</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
-			<CommerceChanges>
-				<iCommerce>3</iCommerce>
-			</CommerceChanges>
+            <CommerceChanges>
+                <iCommerce>0</iCommerce>
+                <iCommerce>0</iCommerce>
+                <iCommerce>4</iCommerce>
+            </CommerceChanges>
 			<PropertyManipulators>
 				<PropertySource>
 					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
@@ -1501,6 +1556,7 @@
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_MA_EVELPIDON_MILITARY_ACADEMY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1521,10 +1577,10 @@
 				<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>2320</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>2</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_EXPENSIVE</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -1557,6 +1613,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_HARVARD_UNIVERSITY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1587,10 +1644,10 @@
 				<BuildingType>BUILDING_COURTHOUSE</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -1666,6 +1723,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_HARVARD_UNIVERSITY</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_HEIDELBERG_UNIVERSITY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1691,10 +1749,10 @@
 				<BuildingType>BUILDING_UNIVERSITY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -1745,6 +1803,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_MA_IMPERIAL_NAVAL_ACADEMY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1765,10 +1824,10 @@
 				<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>2320</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -1801,6 +1860,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_JAGIELLONIAN_UNIVERSITY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1832,10 +1892,10 @@
 				<BuildingType>BUILDING_ARTIST_COLONY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1700</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -1908,6 +1968,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_LL_KILGII_GWAAY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1926,21 +1987,31 @@
 			<bWater>1</bWater>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>160</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>2</iYield>
 				<iYield>5</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>3</iCommerce>
 			</CommerceChanges>
 			<iAsset>10</iAsset>
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
+			<PropertyManipulators>
+				<PropertySource>
+					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
+					<PropertyType>PROPERTY_TOURISM</PropertyType>
+					<iAmountPerTurn>5</iAmountPerTurn>
+				</PropertySource>
+			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_PC_KLASIES_RIVER_CAVES</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1965,17 +2036,19 @@
 			</PrereqOrFeature>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>40</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
-			<CommerceChanges>
-				<iCommerce>3</iCommerce>
-			</CommerceChanges>
+            <CommerceChanges>
+                <iCommerce>0</iCommerce>
+                <iCommerce>0</iCommerce>
+                <iCommerce>4</iCommerce>
+            </CommerceChanges>
 			<PropertyManipulators>
 				<PropertySource>
 					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
@@ -1987,6 +2060,7 @@
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_LL_MCCALLUM</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2005,21 +2079,31 @@
 			<bWater>1</bWater>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>160</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>3</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
 			</CommerceChanges>
 			<iAsset>10</iAsset>
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
+			<PropertyManipulators>
+				<PropertySource>
+					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
+					<PropertyType>PROPERTY_TOURISM</PropertyType>
+					<iAmountPerTurn>5</iAmountPerTurn>
+				</PropertySource>
+			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_LL_MEADOWCROFT_ROCKSHELTER</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2037,18 +2121,18 @@
 			<PrereqTech>TECH_STONE_BUILDING</PrereqTech>
 			<ObsoleteTech>TECH_MINING</ObsoleteTech>
 			<iCost>248</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>3</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>3</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>7</iCommerce>
 			</CommerceChanges>
 			<iAsset>10</iAsset>
 			<iConquestProb>100</iConquestProb>
@@ -2057,10 +2141,11 @@
 				<PropertySource>
 					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
 					<PropertyType>PROPERTY_TOURISM</PropertyType>
-					<iAmountPerTurn>3</iAmountPerTurn>
+					<iAmountPerTurn>5</iAmountPerTurn>
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_LL_MONTE_VERDE</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2078,21 +2163,31 @@
 			<PrereqTech>TECH_TRIBALISM</PrereqTech>
 			<ObsoleteTech>TECH_COPPER_WORKING</ObsoleteTech>
 			<iCost>296</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>2</iYield>
 				<iYield>2</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>5</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
 			</CommerceChanges>
 			<iAsset>10</iAsset>
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
+			<PropertyManipulators>
+				<PropertySource>
+					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
+					<PropertyType>PROPERTY_TOURISM</PropertyType>
+					<iAmountPerTurn>5</iAmountPerTurn>
+				</PropertySource>
+			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_MONTPELLIER_UNIVERSITY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2123,10 +2218,10 @@
 				<BuildingType>BUILDING_ANATOMY_LAB</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1520</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2204,6 +2299,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_MONTPELLIER_UNIVERSITY</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_OXFORD_UNIVERSITY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2235,10 +2331,10 @@
 				<BuildingType>BUILDING_BANK</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2315,6 +2411,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_PC_PEDRA_FURADA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2356,17 +2453,19 @@
 			</PrereqOrFeature>
 			<ObsoleteTech>TECH_SEDENTARY_LIFESTYLE</ObsoleteTech>
 			<iCost>40</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>3</iYield>
 				<iYield>3</iYield>
 			</YieldChanges>
-			<CommerceChanges>
-				<iCommerce>3</iCommerce>
-			</CommerceChanges>
+            <CommerceChanges>
+                <iCommerce>0</iCommerce>
+                <iCommerce>0</iCommerce>
+                <iCommerce>4</iCommerce>
+            </CommerceChanges>
 			<PropertyManipulators>
 				<PropertySource>
 					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
@@ -2378,6 +2477,7 @@
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_MA_REPUBLIC_NAVAL_ACADEMY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2398,10 +2498,10 @@
 				<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>2320</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2452,22 +2552,32 @@
 			<bWater>1</bWater>
 			<iMinAreaSize>10</iMinAreaSize>
 			<ObsoleteTech>TECH_COPPER_WORKING</ObsoleteTech>
-			<iCost>296</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<iCost>320</iCost>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<YieldChanges>
 				<iYield>2</iYield>
 				<iYield>5</iYield>
 			</YieldChanges>
 			<CommerceChanges>
-				<iCommerce>2</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>3</iCommerce>
 			</CommerceChanges>
 			<iAsset>10</iAsset>
 			<iConquestProb>100</iConquestProb>
 			<iHurryCostModifier>100</iHurryCostModifier>
+			<PropertyManipulators>
+				<PropertySource>
+					<PropertySourceType>PROPERTYSOURCE_CONSTANT</PropertySourceType>
+					<PropertyType>PROPERTY_TOURISM</PropertyType>
+					<iAmountPerTurn>5</iAmountPerTurn>
+				</PropertySource>
+			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_MA_ROYAL_AIR_FORCE_ACADEMY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2488,10 +2598,10 @@
 				<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>4120</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>2</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_EXPENSIVE</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2524,6 +2634,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_SORBONNE_UNIVERSITY</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2555,10 +2666,10 @@
 				<BuildingType>BUILDING_ARTIST_COLONY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1700</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2631,6 +2742,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_BARCELONA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2661,10 +2773,10 @@
 				<BuildingType>BUILDING_ANATOMY_LAB</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1520</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2742,6 +2854,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_OF_BARCELONA</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_BASEL</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2773,10 +2886,10 @@
 				<BuildingType>BUILDING_ARTIST_COLONY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1700</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2849,6 +2962,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_BOLOGNA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2879,10 +2993,10 @@
 				<BuildingType>BUILDING_COURTHOUSE</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -2958,6 +3072,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_OF_BOLOGNA</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_CAMBRIDGE</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2983,10 +3098,10 @@
 				<BuildingType>BUILDING_UNIVERSITY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -3037,6 +3152,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_COIMBRA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3067,10 +3183,10 @@
 				<BuildingType>BUILDING_ANATOMY_LAB</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1520</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -3148,6 +3264,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_OF_COIMBRA</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_EDINBURGH</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3179,10 +3296,10 @@
 				<BuildingType>BUILDING_BANK</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -3254,6 +3371,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_MURCIA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3285,10 +3403,10 @@
 				<BuildingType>BUILDING_BANK</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -3360,6 +3478,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_PADUA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3385,10 +3504,10 @@
 				<BuildingType>BUILDING_UNIVERSITY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -3439,6 +3558,7 @@
 				</PropertySource>
 			</PropertyManipulators>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_EU_UNIVERSITY_OF_SALAMANCA</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3469,10 +3589,10 @@
 				<BuildingType>BUILDING_COURTHOUSE</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>1472</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -3548,6 +3668,7 @@
 			</PropertyManipulators>
 			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_OF_SALAMANCA</MovieDefineTag>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_DW_VINTAGE_RED</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3570,10 +3691,10 @@
 				<BuildingType>BUILDING_ORDINANCE_ALCOHOL_PROHIBITION</BuildingType>
 			</ReplacementBuildings>
 			<iCost>1280</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<ExtraFreeBonuses>
 				<ExtraFreeBonus>
 					<FreeBonus>BONUS_WINE_VINTAGE_RED</FreeBonus>
@@ -3594,6 +3715,7 @@
 			<iConquestProb>100</iConquestProb>
 			<bNukeImmune>1</bNukeImmune>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_DW_VINTAGE_WHITE</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3616,10 +3738,10 @@
 				<BuildingType>BUILDING_ORDINANCE_ALCOHOL_PROHIBITION</BuildingType>
 			</ReplacementBuildings>
 			<iCost>1280</iCost>
-			<iCostSizeModifier>2</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>1</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_BIG</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_NORMAL</CostComplexityModifier>
 			<ExtraFreeBonuses>
 				<ExtraFreeBonus>
 					<FreeBonus>BONUS_WINE_VINTAGE_WHITE</FreeBonus>
@@ -3641,6 +3763,7 @@
 			<iHurryCostModifier>250</iHurryCostModifier>
 			<bNukeImmune>1</bNukeImmune>
 		</BuildingInfo>
+
 		<BuildingInfo>
 			<Type>BUILDING_MA_WEST_POINT</Type>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -3662,10 +3785,10 @@
 				<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
 			</PrereqInCityBuildings>
 			<iCost>2320</iCost>
-			<iCostSizeModifier>3</iCostSizeModifier>
-			<iCostCountModifier>0</iCostCountModifier>
-			<iCostMaterialsModifier>1</iCostMaterialsModifier>
-			<iCostComplexityModifier>2</iCostComplexityModifier>
+			<CostSizeModifier>BUILDINGCOSTSIZE_HUGE</CostSizeModifier>
+			<CostCountModifier>BUILDINGCOSTCOUNT_ONE</CostCountModifier>
+			<CostMaterialsModifier>BUILDINGCOSTMATERIALS_NORMAL</CostMaterialsModifier>
+			<CostComplexityModifier>BUILDINGCOSTCOMPLEXITY_COMPLEX</CostComplexityModifier>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>

@@ -168,6 +168,13 @@ void CyInfoPythonInterface1()
 
 		.def("getAddsBuildType", &CvPromotionInfo::getAddsBuildType, "int (int i)")
 		.def("getNumAddsBuildTypes", &CvPromotionInfo::getNumAddsBuildTypes, "int ()")
+
+		.def("getOnGameOption", &CvPromotionInfo::getOnGameOption, "int (int i)")
+		.def("getNumOnGameOptions", &CvPromotionInfo::getNumOnGameOptions, "int ()")
+		.def("isOnGameOption", &CvPromotionInfo::isOnGameOption, "bool (int i)")
+		.def("getNotOnGameOption", &CvPromotionInfo::getNotOnGameOption, "int (int i)")
+		.def("getNumNotOnGameOptions", &CvPromotionInfo::getNumNotOnGameOptions, "int ()")
+		.def("isNotOnGameOption", &CvPromotionInfo::isNotOnGameOption, "bool (int i)")
 		;
 
 	python::class_<CvMissionInfo, python::bases<CvInfoBase>, boost::noncopyable>("CvMissionInfo", python::no_init)
@@ -189,6 +196,7 @@ void CyInfoPythonInterface1()
 		.def("getMaxGlobalInstances", &CvUnitInfo::getMaxGlobalInstances, "int ()")
 		.def("getMaxPlayerInstances", &CvUnitInfo::getMaxPlayerInstances, "int ()")
 		.def("getProductionCost", &CvUnitInfo::getProductionCost, "int ()")
+		.def("canMergeSplit", &CvUnitInfo::canMergeSplit, "bool ()")
 		.def("getMinAreaSize", &CvUnitInfo::getMinAreaSize, "int ()")
 		.def("getMoves", &CvUnitInfo::getMoves, "int ()")
 		.def("getAirRange", &CvUnitInfo::getAirRange, "int ()")

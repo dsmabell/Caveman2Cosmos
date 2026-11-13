@@ -14,6 +14,15 @@ TechWindowOpt = BugCore.game.TechWindow
 GC = CyGlobalContext()
 TRNSLTR = CyTranslator()
 
+def isPromotionGameOptionValid(info):
+	for i in xrange(info.getNumOnGameOptions()):
+		if not GC.getGame().isOption(info.getOnGameOption(i)):
+			return False
+	for i in xrange(info.getNumNotOnGameOptions()):
+		if GC.getGame().isOption(info.getNotOnGameOption(i)):
+			return False
+	return True
+
 class CvTechSplashScreen:
 	"Splash screen for techs"
 	def __init__(self, iScreenID):
@@ -267,7 +276,6 @@ class CvTechSplashScreen:
 			       self.X_ALLOWS_PANEL + self.iMarginSpace, self.Y_ALLOWS_PANEL2 - 20, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		for eLoopBuilding in range(GC.getNumBuildingInfos()):
-			bTechFound = 0
 			if (isTechRequiredForBuilding(self.iTech, eLoopBuilding)):
 				screen.attachImageButton( panelName2, "", GC.getBuildingInfo(eLoopBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
 						WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
@@ -279,13 +287,12 @@ class CvTechSplashScreen:
 			       self.X_ALLOWS_PANEL + self.iMarginSpace, self.Y_ALLOWS_PANEL3 - 20, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		for j in range(GC.getNumProjectInfos()):
-			bTechFound = 0
 			if (isTechRequiredForProject(self.iTech, j)):
 				screen.attachImageButton( panelName3, "", GC.getProjectInfo(j).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
 							  WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROJECT, j, 1, False )
 
 		for j in range(GC.getNumPromotionInfos()):
-			if (GC.getPromotionInfo(j).getTechPrereq() == self.iTech):
+			if (GC.getPromotionInfo(j).getTechPrereq() == self.iTech and isPromotionGameOptionValid(GC.getPromotionInfo(j))):
 				screen.attachImageButton( panelName3, "", GC.getPromotionInfo(j).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
 							  WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, j, 1, False )
 

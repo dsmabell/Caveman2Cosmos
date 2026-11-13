@@ -172,6 +172,8 @@ public:
 	bool isPromotionValid(int /*PromotionTypes*/ ePromotion) const;
 	bool isPromotionOverriden(int /*PromotionTypes*/ ePromotion) const;
 	bool isHasPromotion(int /*PromotionTypes*/ ePromotion) const;
+	int getStackSupportStat(int stat) const;
+	int getStackSupportLimit() const;
 	bool isHasUnitCombat(int /*UnitCombatTypes*/ eUnitCombat) const;
 	void setHasPromotion(int /*PromotionTypes*/ eIndex, bool bNewValue);
 
@@ -188,7 +190,11 @@ public:
 	void setCommander(bool bNewValue);
 	bool isCommander() const;
 	int getControlPointsLeft() const;
-	int getControlPoints() const;
+    int getControlPoints() const;
+	void setCommodore(bool bNewValue);
+    bool isCommodore() const;
+	int getCommodoreControlPointsLeft() const;
+	int getCommodoreControlPoints() const;
 	float getRealExperience() const;
 
 protected:

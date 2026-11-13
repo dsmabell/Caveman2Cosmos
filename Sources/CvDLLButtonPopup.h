@@ -5,6 +5,10 @@
 #ifndef CIV4_DLL_BUTTON_POPUP_H
 #define CIV4_DLL_BUTTON_POPUP_H
 
+
+#define AMBUSH_FLAG 1
+
+
 class CvPopup;
 class CvPopupInfo;
 class PopupReturn;
@@ -66,6 +70,7 @@ private:
 	bool launchFoundReligionPopup(CvPopup* pPopup, CvPopupInfo &info);
 	bool launchGetSaveFormatPopup(CvPopup* pPopup, CvPopupInfo &info);
 	bool launchModifierRecalculationPopup(CvPopup* pPopup, CvPopupInfo &info);
+	bool launchStackPromotionsMigrationPopup(CvPopup* pPopup, CvPopupInfo &info);
 	bool launchNameListPopup(CvPopup* pPopup, CvPopupInfo &info);
 	bool launchGoToCityPopup(CvPopup* pPopup, CvPopupInfo &info);
 

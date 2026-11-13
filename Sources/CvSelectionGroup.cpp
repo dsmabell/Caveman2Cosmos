@@ -104,6 +104,8 @@ void CvSelectionGroup::reset(int iID, PlayerTypes eOwner, bool bConstructorCall)
 	m_bLastPlotVisible = false;
 	m_bLastPlotRevealed = false;
 
+	m_iArmyID = -1;
+
 	if (!bConstructorCall)
 	{
 		AI_reset();
@@ -287,7 +289,10 @@ void CvSelectionGroup::doTurn()
 
 		if (AI_isControlled())
 		{
-			if ((getActivityType() != ACTIVITY_MISSION) || (!canDefend() && (GET_PLAYER(getOwner()).AI_getAnyPlotDanger(plot(), 2))))
+			if ((getActivityType() != ACTIVITY_MISSION)
+			|| (!canDefend()
+			&& (!headMissionQueueNode() || headMissionQueueNode()->m_data.eMissionType != MISSION_BUILD)
+			&& (GET_PLAYER(getOwner()).AI_getAnyPlotDanger(plot(), 2))))
 			{
 				setForceUpdate(true);
 			}
@@ -296,7 +301,9 @@ void CvSelectionGroup::doTurn()
 		{
 			foreach_(const CvUnit* pLoopUnit, units() | filtered(!CvUnit::fn::isSpy()))
 			{
-				if (GET_PLAYER(getOwner()).AI_getAnyPlotDanger(plot(), 2))
+				if (pLoopUnit->getBuildType() == NO_BUILD
+				&& (headMissionQueueNode() == NULL || headMissionQueueNode()->m_data.eMissionType != MISSION_ROUTE_TO)
+				&& GET_PLAYER(getOwner()).AI_getAnyPlotDanger(plot(), 2))
 				{
 					clearMissionQueue();
 				}
@@ -514,6 +521,9 @@ bool CvSelectionGroup::pushMissionInternal(MissionTypes eMission, int iData1, in
 		clearMissionQueue();
 	}
 
+	if (getHeadUnit() == NULL)
+		return false;
+
 	if (bManual)
 	{
 		setAutomateType(NO_AUTOMATE);
@@ -570,6 +580,8 @@ void CvSelectionGroup::autoMission()
 	if (getNumUnits() > 0 && headMissionQueueNode() && !isBusy())
 	{
 		if (isHuman()
+		&& headMissionQueueNode()->m_data.eMissionType != MISSION_BUILD
+		&& headMissionQueueNode()->m_data.eMissionType != MISSION_ROUTE_TO
 		&& algo::any_of(units(), !CvUnit::fn::alwaysInvisible())
 		&& GET_PLAYER(getOwner()).AI_getAnyPlotDanger(plot(), 1))
 		{
@@ -647,9 +659,8 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 	{
 		pPlot = plot();
 	}
-#ifdef NOMADIC_START
+	const bool bNomadicStart = GC.getGame().isOption(GAMEOPTION_NOMADIC_START);
 	const TechTypes sedentaryLifestyle = GC.getTECH_SEDENTARY_LIFESTYLE();
-#endif
 	foreach_(CvUnit* unitX, units())
 	{
 		switch (iMission)
@@ -712,7 +723,7 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			}
 			case MISSION_AUTO_BUILDUP:
 			{
-				if (unitX->canBuildUp() || unitX->canFortify() || unitX->canSleep())
+				if (unitX->canBuildUp())
 				{
 					return true;
 				}
@@ -891,12 +902,10 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			}
 			case MISSION_FOUND:
 			{
-#ifdef NOMADIC_START
-				if (!GET_TEAM(unitX->getTeam()).isHasTech(sedentaryLifestyle))
+				if (bNomadicStart && !GET_TEAM(unitX->getTeam()).isHasTech(sedentaryLifestyle))
 				{
 					return false;
 				}
-#endif
 				if (unitX->canFound(pPlot, bTestVisible))
 				{
 					return true;
@@ -1164,7 +1173,26 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			}
 			case MISSION_GREAT_COMMANDER:
 			{
-				if (GC.getGame().isOption(GAMEOPTION_UNIT_GREAT_COMMANDERS) && unitX->getUnitInfo().isGreatGeneral() && !unitX->isCommander())
+				if (GC.getGame().isOption(GAMEOPTION_UNIT_GREAT_COMMANDERS)
+				&& unitX->getUnitType() == static_cast<UnitTypes>(GC.getInfoTypeForString("UNIT_GREAT_GENERAL"))
+				&& !unitX->isCommander()
+				&& !unitX->isCommodore())
+				{
+					return true;
+				}
+				break;
+			}
+			case MISSION_GREAT_COMMODORE:
+			{
+				if (GC.getGame().isOption(GAMEOPTION_UNIT_GREAT_COMMODORES)
+				&& unitX->getUnitType() == static_cast<UnitTypes>(GC.getInfoTypeForString("UNIT_GREAT_ADMIRAL"))
+				&& !unitX->isCommodore()
+				&& !unitX->isCommander()
+				&& unitX->getTransportUnit() == NULL
+				&& (unitX->canMoveAllTerrain()
+					|| pPlot->isWater()
+					|| pPlot->isCanMoveSeaUnits()
+					|| (pPlot->isFriendlyCity(*unitX, true) && pPlot->isCoastalLand())))
 				{
 					return true;
 				}
@@ -1181,6 +1209,14 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			case MISSION_AMBUSH:
 			{
 				if (unitX->canAmbush(pPlot, false))
+				{
+					return true;
+				}
+				break;
+			}
+			case MISSION_HUNT:
+			{
+				if (unitX->canHunt(pPlot))
 				{
 					return true;
 				}
@@ -1359,6 +1395,7 @@ bool CvSelectionGroup::startMission()
 #endif
 			case MISSION_AMBUSH:
 			case MISSION_ASSASSINATE:
+			case MISSION_HUNT:
 			{
 				bDelete = true;
 				bCycle = false;
@@ -1406,19 +1443,22 @@ bool CvSelectionGroup::startMission()
 						}
 						iMovesLeft /= 100;
 
-						iMovesLeft = std::max(iMaxMovesLeft, iMovesLeft);
-
-						if (iMovesLeft >= iMaxMovesLeft && pLoopUnit->pillage())
-						{
-							bAction = true;
-							if( isHuman() || canAllMove() )
-							{
-								bDidPillage = true;
-								iMovesLeft -= 1;
-								break;
-							}
-						}
-						iNextMaxMovesLeft = std::min( iNextMaxMovesLeft, iMovesLeft );
+						if (iMovesLeft >= iMaxMovesLeft)
+                        {
+                            if (pLoopUnit->pillage())
+                            {
+                                bAction = true;
+                                if( isHuman() || canAllMove() )
+                                {
+                                    bDidPillage = true;
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            iNextMaxMovesLeft = std::max( iNextMaxMovesLeft, iMovesLeft );
+                        }
 					}
 				}
 
@@ -1455,6 +1495,18 @@ bool CvSelectionGroup::startMission()
 							{
 								pBestUnit = pLoopUnit;
 								iBestUnitValue = iUnitValue2;
+							}
+						}
+						break;
+
+					case MISSION_HUNT:
+						if (pLoopUnit->canHunt(plot()))
+						{
+							const int iUnitValue3 = pLoopUnit->AI_attackOdds(plot(), false, 0, false);
+							if (iUnitValue3 >= iBestUnitValue)
+							{
+								pBestUnit = pLoopUnit;
+								iBestUnitValue = iUnitValue3;
 							}
 						}
 						break;
@@ -1672,7 +1724,8 @@ bool CvSelectionGroup::startMission()
 						}
 						case MISSION_DISCOVER:
 						{
-							if (GET_PLAYER(pLoopUnit->getOwner()).getUnit(headMissionQueueNode()->m_data.iData1)->discover((TechTypes)headMissionQueueNode()->m_data.iData2))
+						    CvUnit* pDiscoverUnit = GET_PLAYER(pLoopUnit->getOwner()).getUnit(headMissionQueueNode()->m_data.iData1);
+							if (pDiscoverUnit && pDiscoverUnit->discover((TechTypes)headMissionQueueNode()->m_data.iData2))
 							{
 								bAction = true;
 							}
@@ -1823,9 +1876,27 @@ bool CvSelectionGroup::startMission()
 						}
 						case MISSION_GREAT_COMMANDER:
 						{
-							if (pLoopUnit->getUnitInfo().isGreatGeneral() && !pLoopUnit->isCommander())
+							if (pLoopUnit->getUnitType() == static_cast<UnitTypes>(GC.getInfoTypeForString("UNIT_GREAT_GENERAL"))
+							&& !pLoopUnit->isCommander()
+							&& !pLoopUnit->isCommodore())
 							{
 								pLoopUnit->setCommander(true);
+								bAction = true;
+							}
+							break;
+						}
+						case MISSION_GREAT_COMMODORE:
+						{
+							if (pLoopUnit->getUnitType() == static_cast<UnitTypes>(GC.getInfoTypeForString("UNIT_GREAT_ADMIRAL"))
+							&& !pLoopUnit->isCommodore()
+							&& !pLoopUnit->isCommander()
+							&& pLoopUnit->getTransportUnit() == NULL
+							&& (plot()->isWater()
+								|| plot()->isCanMoveSeaUnits()
+								|| pLoopUnit->canMoveAllTerrain()
+								|| (plot()->isFriendlyCity(*pLoopUnit, true) && plot()->isCoastalLand())))
+							{
+								pLoopUnit->setCommodore(true);
 								bAction = true;
 							}
 							break;
@@ -1883,6 +1954,14 @@ bool CvSelectionGroup::startMission()
 						case MISSION_AMBUSH:
 						{
 							if (pLoopUnit == pBestUnit && pLoopUnit->doAmbush(false))
+							{
+								bAction = true;
+							}
+							break;
+						}
+						case MISSION_HUNT:
+						{
+							if (pLoopUnit == pBestUnit && pLoopUnit->doHunt())
 							{
 								bAction = true;
 							}
@@ -2299,6 +2378,7 @@ bool CvSelectionGroup::continueMission(int iSteps)
 				if (!isHuman() || missionNode->m_data.eMissionType != MISSION_MOVE_TO)
 				{
 					deleteMissionQueueNode(missionNode);
+					missionNode = NULL;
 
 					// We executed this one ok but if we have no moves left don't leave
 					//	it with ACTIVITY_AWAKE as its state as that'll just cause the AI to spin wheels.
@@ -2701,9 +2781,9 @@ bool CvSelectionGroup::canDoInterfaceModeAt(InterfaceModeTypes eInterfaceMode, C
 			}
 			case INTERFACEMODE_SHADOW_UNIT:
 			{
-				foreach_(CvUnit* pLoopUnit, pPlot->units())
+				foreach_(CvUnit* pPlotUnit, pPlot->units())
 				{
-					if (pLoopUnit->canShadowAt(pPlot, pLoopUnit))
+					if (pLoopUnit->canShadowAt(pPlot, pPlotUnit))
 					{
 						return true;
 					}
@@ -3059,10 +3139,13 @@ int CvSelectionGroup::getMinimumRBombardRange() const
 	int iLowest = MAX_INT;
 	foreach_(const CvUnit* pLoopUnit, units())
 	{
-		const int iTemp = pLoopUnit->rBombardDamageLimit();
-		if (iTemp > 0 && iTemp < iLowest)
+		if (pLoopUnit->rBombardDamageLimit() > 0)
 		{
-			iLowest = pLoopUnit->getDCMBombRange();
+			const int iRange = pLoopUnit->getDCMBombRange();
+			if (iRange < iLowest)
+			{
+				iLowest = iRange;
+			}
 		}
 	}
 
@@ -3714,36 +3797,50 @@ void CvSelectionGroup::groupMove(CvPlot* pPlot, bool bCombat, CvUnit* pCombatUni
 		&& (bCombat ? unitX->canEnterOrAttackPlot(pPlot) : unitX->canEnterPlot(pPlot)))
 		{
 			unitX->move(pPlot, true);
+			GC.stuckUnitMoveCounts.erase(unitX->getID());
 		}
 		else
 		{
 			unitX->joinGroup(NULL, true);
 			unitX->ExecuteMove(((float)(GC.getMissionInfo(MISSION_MOVE_TO).getTime() * gDLL->getMillisecsPerTurn())) / 1000.0f, false);
 
-			// Afforess - Units Seem to be getting stuck here
-			if (GC.iStuckUnitID != unitX->getID())
+			// The pathfinder's terminus check (ContextFreeNewPathValidFunc) always treats a
+			// path's final plot as enterable, even with a visible enemy there, so a legitimate
+			// attack-capable move isn't rejected before combat gets a say. But a plain,
+			// non-combat move's canEnterPlot() correctly refuses to walk into a plot with a
+			// visible enemy. So if an enemy shows up at our destination between planning and
+			// arrival, the path still looks perfectly "valid" (the terminus check never looked
+			// for an enemy to begin with), re-pathing produces the exact same route, and the
+			// unit would otherwise just keep retrying the same stale order forever. Recognize
+			// this specific, identifiable cause immediately - entry would succeed if attacking
+			// were allowed - and abandon the mission so the unit's AI re-decides fresh next
+			// pass (attack, reroute, wait...) instead of blindly repeating a move that can
+			// never complete.
+			if (!bCombat && unitX->canEnterOrAttackPlot(pPlot))
 			{
-				GC.iStuckUnitID = unitX->getID();
-				GC.iStuckUnitCount = 0;
+				clearMissionQueue();
+				GC.stuckUnitMoveCounts.erase(unitX->getID());
 			}
-			else
+			// Afforess - Units Seem to be getting stuck here
+			// Tracked per unit ID (not a single shared counter) - a shared counter let any
+			// other unit hitting this branch in between reset an unrelated unit's progress,
+			// so a genuinely stuck unit could go indefinitely without ever reaching the
+			// finishMoves() escape below.
+			else if (++GC.stuckUnitMoveCounts[unitX->getID()] > 5)
 			{
-				GC.iStuckUnitCount++;
-				if (GC.iStuckUnitCount > 5)
+				FErrorMsg("Unit Stuck in Loop!");
+				const CvUnit* pHeadUnit = getHeadUnit();
+				if (NULL != pHeadUnit)
 				{
-					FErrorMsg("Unit Stuck in Loop!");
-					const CvUnit* pHeadUnit = getHeadUnit();
-					if (NULL != pHeadUnit)
-					{
-						char szOut[1024];
-						CvWString szTempString;
-						getUnitAIString(szTempString, pHeadUnit->AI_getUnitAIType());
-						sprintf(szOut, "Unit stuck in loop: %S(%S)[%d, %d] (%S)\n", pHeadUnit->getName().GetCString(), GET_PLAYER(pHeadUnit->getOwner()).getName(),
-							pHeadUnit->getX(), pHeadUnit->getY(), szTempString.GetCString());
-						gDLL->messageControlLog(szOut);
-					}
-					unitX->finishMoves();
+					char szOut[1024];
+					CvWString szTempString;
+					getUnitAIString(szTempString, pHeadUnit->AI_getUnitAIType());
+					sprintf(szOut, "Unit stuck in loop: %S(%S)[%d, %d] (%S)\n", pHeadUnit->getName().GetCString(), GET_PLAYER(pHeadUnit->getOwner()).getName(),
+						pHeadUnit->getX(), pHeadUnit->getY(), szTempString.GetCString());
+					gDLL->messageControlLog(szOut);
 				}
+				unitX->finishMoves();
+				GC.stuckUnitMoveCounts.erase(unitX->getID());
 			}
 		}
 	}
@@ -4474,7 +4571,7 @@ void CvSelectionGroup::setActivityType(ActivityTypes eNewValue, MissionTypes eSl
 							||	eSleepType == NO_MISSION
 						)
 					) pLoopUnit->setBuildUpType(NO_PROMOTIONLINE, eSleepType);
-
+					
 					pLoopUnit->setSleepType(pLoopUnit->isFortifyable() ? MISSION_FORTIFY : MISSION_SLEEP);
 				}
 			}
@@ -4953,7 +5050,7 @@ int	CvSelectionGroup::getWorstDamagePercent(UnitCombatTypes eIgnoreUnitCombat) c
 	{
 		if (eIgnoreUnitCombat == NO_UNITCOMBAT || !pLoopUnit->isHasUnitCombat(eIgnoreUnitCombat))
 		{
-			if (pLoopUnit->getDamage() > iWorstDamage)
+			if (pLoopUnit->getDamagePercent() > iWorstDamage)
 			{
 				iWorstDamage = pLoopUnit->getDamagePercent();
 			}
@@ -5436,6 +5533,7 @@ TeamTypes CvSelectionGroup::getHeadTeam() const
 
 void CvSelectionGroup::clearMissionQueue()
 {
+	PROFILE_FUNC();
 	FAssert(getOwner() != NO_PLAYER);
 	FAssert(getHeadUnit());
 
@@ -5870,6 +5968,11 @@ int CvSelectionGroup::getStrength() const
 bool CvSelectionGroup::hasCommander() const
 {
 	return algo::any_of(units(), CvUnit::fn::isCommander());
+}
+
+bool CvSelectionGroup::hasCommodore() const
+{
+	return algo::any_of(units(), CvUnit::fn::isCommodore());
 }
 
 void CvSelectionGroup::validateLocations(bool bFixup) const

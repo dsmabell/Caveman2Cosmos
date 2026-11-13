@@ -10,6 +10,7 @@
 #include "FProfiler.h"
 
 #include "CvGameCoreDLL.h"
+#include "StackPromotions.h"
 #include "CvArea.h"
 #include "CvBuildingInfo.h"
 #include "CvCity.h"
@@ -82,7 +83,7 @@ void CvMap::init(CvMapInitData* pInitInfo/*=NULL*/)
 {
 	OutputDebugString("Initializing Map: Start\n");
 	PROFILE("CvMap::init");
-	gDLL->logMemState( CvString::format("CvMap::init begin - world size=%s, climate=%s, sealevel=%s, num custom options=%6",
+	gDLL->logMemState( CvString::format("CvMap::init begin - world size=%S, climate=%S, sealevel=%S, num custom options=%d",
 		GC.getWorldInfo(GC.getInitCore().getWorldSize()).getDescription(),
 		GC.getClimateInfo(GC.getInitCore().getClimate()).getDescription(),
 		GC.getSeaLevelInfo(GC.getInitCore().getSeaLevel()).getDescription(),
@@ -150,6 +151,7 @@ void CvMap::uninit()
 // Initializes data members that are serialized.
 void CvMap::reset(CvMapInitData* pInitInfo)
 {
+	StackPromotions::reset();
 	PROFILE_EXTRA_FUNC();
 	//--------------------------------
 	// Uninit class
@@ -250,11 +252,15 @@ void CvMap::reset(CvMapInitData* pInitInfo)
 			m_iGridWidth = GC.getMapInfo(getType()).getGridWidth();
 			m_iGridHeight = GC.getMapInfo(getType()).getGridHeight();
 		}
-		if (GC.getMapInfo(getType()).getWrapX() > 0 && GC.getMapInfo(getType()).getWrapY() > 0)
-		{
-			m_bWrapX = GC.getMapInfo(getType()).getWrapX();
-			m_bWrapY = GC.getMapInfo(getType()).getWrapY();
-		}
+		// X-wrap and Y-wrap are independent (e.g. a cylinder is wrapX=1, wrapY=0), so set each on its own.
+        if (GC.getMapInfo(getType()).getWrapX() > 0)
+        {
+            m_bWrapX = true;
+        }
+        if (GC.getMapInfo(getType()).getWrapY() > 0)
+        {
+            m_bWrapY = true;
+        }
 	}
 /*******************************/
 /***** Parallel Maps - End *****/
@@ -434,9 +440,12 @@ void CvMap::updateIncomingUnits()
 			if (m_eType == MAP_EARTH)
 			{
 				// Units arriving on Earth always arrive at the owner's capital
-				const CvPlot* plot = owner.getCapitalCity()->plot();
-				iDestX = plot->getX();
-				iDestY = plot->getY();
+				const CvCity* pCapital = owner.getCapitalCity();
+				if (pCapital != NULL)
+                {
+                    iDestX = pCapital->getX();
+                    iDestY = pCapital->getY();
+                }
 			}
 			else if (m_eType == MAP_CISLUNAR)
 			{
@@ -449,7 +458,7 @@ void CvMap::updateIncomingUnits()
 				else
 				{
 					// Arriving from outside Earth, so units spawn on the opposite side of Orbit instead
-					iDestY = m_iGridHeight - GC.getGame().getSorenRandNum(3, "Multimap arriving unit non-Earth to Cislunar y coordinate");
+					iDestY = m_iGridHeight - 1 - GC.getGame().getSorenRandNum(3, "Multimap arriving unit non-Earth to Cislunar y coordinate");
 				}
 			}
 
@@ -509,15 +518,25 @@ void CvMap::updateFlagSymbolsInternal(bool bForce)
 }
 
 
-void CvMap::updateFog()
+void CvMap::updateFog(const bool bApplyDecay)
 {
 	PROFILE_FUNC();
 
 	for (int iI = 0; iI < numPlots(); iI++)
 	{
-		plotByIndex(iI)->updateFog();
+		plotByIndex(iI)->updateFog(bApplyDecay);
 	}
 }
+
+#ifdef ENABLE_FOGWAR_DECAY
+void CvMap::InitFogDecay(const bool pWithRandom)
+{
+	for (int iI = 0; iI < numPlots(); iI++)
+	{
+		plotByIndex(iI)->InitFogDecay(pWithRandom);
+	}
+}
+#endif
 
 
 void CvMap::updateVisibility()
@@ -1330,6 +1349,11 @@ void CvMap::read(FDataStreamBase* pStream)
 	WRAPPER_READ_OBJECT_END(wrapper);
 
 	OutputDebugString("Reading Map: End\n");
+
+#ifdef ENABLE_FOGWAR_DECAY
+	InitFogDecay(true);
+#endif
+
 }
 
 // save object to a stream

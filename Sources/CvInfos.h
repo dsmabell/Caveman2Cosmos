@@ -326,6 +326,7 @@ public:
 	virtual ~CvTechInfo();
 
 	int getAdvisorType() const;
+	int getStackSupportLimitChange() const { return m_iStackSupportLimitChange; }
 	int getAIWeight() const;
 	int getAITradeModifier() const;
 	int getResearchCost() const;
@@ -530,6 +531,9 @@ public:
 		for (int i = 0; i < iCount; i++) itr++;
 		return *itr;
 	}
+
+private:
+	int m_iStackSupportLimitChange;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -545,6 +549,26 @@ class CvPromotionInfo
 {
 	//---------------------------PUBLIC INTERFACE---------------------------------
 public:
+
+	// Derived stack promotions are configuration, never permanent unit upgrades.
+	int getStackSupportKind() const { return m_iStackSupportKind; }
+	int getStackSupportProfile() const { return m_iStackSupportProfile; }
+	int getStackSupportFamily() const { return m_iStackSupportFamily; }
+	int getStackSupportTier() const { return m_iStackSupportTier; }
+	int getStackSupportWeight() const { return m_iStackSupportWeight; }
+	bool isStackSupportProviderDefensive() const { return m_bStackSupportProviderDefensive; }
+	bool isStackSupportProviderIntercept() const { return m_bStackSupportProviderIntercept; }
+	bool isStackSupportRecipientIntercept() const { return m_bStackSupportRecipientIntercept; }
+	bool isStackSupportAttackersOnly() const { return m_bStackSupportAttackersOnly; }
+	bool isStackSupportCarrier() const { return m_bStackSupportCarrier; }
+	DomainTypes getStackSupportDomain() const { return m_eStackSupportDomain; }
+	const std::vector<UnitCombatTypes>& getStackSupportProviders() const { return m_stackSupportProviders; }
+	const std::vector<UnitCombatTypes>& getStackSupportProviderAll() const { return m_stackSupportProviderAll; }
+	const std::vector<UnitCombatTypes>& getStackSupportProviderNot() const { return m_stackSupportProviderNot; }
+	const std::vector<UnitCombatTypes>& getStackSupportRecipients() const { return m_stackSupportRecipients; }
+	const std::vector<UnitCombatTypes>& getStackSupportRecipientNot() const { return m_stackSupportRecipientNot; }
+	const CvString& getStackSupportProviderUnits() const { return m_szStackSupportProviderUnits; }
+
 	CvPromotionInfo();
 	virtual ~CvPromotionInfo();
 
@@ -554,6 +578,7 @@ public:
 	PromotionTypes getPrereqOrPromotion2() const { return m_iPrereqOrPromotion2; }
 
 	TechTypes getTechPrereq() const;
+	BuildingTypes getGrantsBuildingOnFound() const;
 	int getMinEraType() const;
 	int getMaxEraType() const;
 	int getStateReligionPrereq() const;
@@ -621,6 +646,7 @@ public:
 	bool isBlitz() const;
 	bool isAmphib() const;
 	bool isRiver() const;
+	bool isRiverMoveIgnore() const;
 	bool isEnemyRoute() const;
 	bool isAlwaysHeal() const;
 	bool isHillsDoubleMove() const;
@@ -1090,6 +1116,7 @@ protected:
 	PromotionTypes m_iPrereqOrPromotion2;
 
 	TechTypes m_iTechPrereq;
+	BuildingTypes m_eGrantsBuildingOnFound; // Beta: Nomadic Start - city building granted when the unit holding this promotion founds a city
 	int m_iStateReligionPrereq;
 	int m_iMinEraType;
 	int m_iMaxEraType;
@@ -1154,6 +1181,7 @@ protected:
 	bool m_bBlitz;
 	bool m_bAmphib;
 	bool m_bRiver;
+	bool m_bRiverMoveIgnore;
 	bool m_bEnemyRoute;
 	bool m_bAlwaysHeal;
 	bool m_bHillsDoubleMove;
@@ -1400,6 +1428,25 @@ protected:
 	std::vector<int> m_aiQualifiedUnitCombatTypes;
 	std::vector<int> m_disqualifiedUnitCombatTypes;
 
+
+private:
+	int m_iStackSupportKind;
+	int m_iStackSupportProfile;
+	int m_iStackSupportFamily;
+	int m_iStackSupportTier;
+	int m_iStackSupportWeight;
+	bool m_bStackSupportProviderDefensive;
+	bool m_bStackSupportProviderIntercept;
+	bool m_bStackSupportRecipientIntercept;
+	bool m_bStackSupportAttackersOnly;
+	bool m_bStackSupportCarrier;
+	DomainTypes m_eStackSupportDomain;
+	std::vector<UnitCombatTypes> m_stackSupportProviders;
+	std::vector<UnitCombatTypes> m_stackSupportProviderAll;
+	std::vector<UnitCombatTypes> m_stackSupportProviderNot;
+	std::vector<UnitCombatTypes> m_stackSupportRecipients;
+	std::vector<UnitCombatTypes> m_stackSupportRecipientNot;
+	CvString m_szStackSupportProviderUnits;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1886,6 +1933,7 @@ public:
 	bool isDealsColdDamage() const;
 	bool isColdImmune() const;
 	bool isAttackOnlyCities() const;
+	bool isOnlyAttackAnimals() const;
 	bool isIgnoreNoEntryLevel() const;
 	bool isIgnoreZoneofControl() const;
 	bool isFliesToMove() const;
@@ -1898,6 +1946,7 @@ public:
 	bool isBlendIntoCity() const;
 	bool isUpgradeAnywhere() const;
 	bool isAssassin() const;
+	bool isNoAmbush() const;
 	bool isStealthDefense() const;
 	bool isNoInvisibility() const;
 	bool isTriggerBeforeAttack() const;
@@ -2548,6 +2597,7 @@ private:
 	bool m_bDealsColdDamage;
 	bool m_bColdImmune;
 	bool m_bAttackOnlyCities;
+	bool m_bOnlyAttackAnimals;
 	bool m_bIgnoreNoEntryLevel;
 	bool m_bIgnoreZoneofControl;
 	bool m_bFliesToMove;
@@ -2560,6 +2610,7 @@ private:
 	bool m_bBlendIntoCity;
 	bool m_bUpgradeAnywhere;
 	bool m_bAssassin;
+	bool m_bNoAmbush;
 	bool m_bStealthDefense;
 	bool m_bNoInvisibility;
 	bool m_bTriggerBeforeAttack;
@@ -6503,7 +6554,7 @@ public:
 	int getEventChancePerTurn() const;
 	int getSoundtrackSpace() const;
 	int getNumSoundtracks() const;
-	int getBeelineStingsTechCostModifier() const;
+	int getCuttingEdgeCutsTechCostModifier() const;
 	int getInitialCityMaintenancePercent() const;
 
 	const char* getAudioUnitVictoryScript() const;
@@ -6546,7 +6597,7 @@ protected:
 	int m_iEventChancePerTurn;
 	int m_iSoundtrackSpace;
 	int m_iNumSoundtracks;
-	int m_iBeelineStingsTechCostModifier;
+	int m_iCuttingEdgeCutsTechCostModifier;
 	int m_iInitialCityMaintenancePercent;
 
 	CvString m_szAudioUnitVictoryScript;
@@ -7039,6 +7090,8 @@ public:
 	int getNumTerrainsRequired() const;
 	int getImprovementRequired(int i) const;
 	int getNumImprovementsRequired() const;
+	int getNotImprovementRequired(int i) const;
+	int getNumNotImprovementsRequired() const;
 	int getBonusRequired(int i) const;
 	int getNumBonusesRequired() const;
 	int getRouteRequired(int i) const;
@@ -7078,6 +7131,7 @@ public:
 	bool isShowPlot() const;
 	bool isUnitsOnPlot() const;
 	bool isOwnPlot() const;
+	bool isNotOnCity() const;
 	bool isPickReligion() const;
 	bool isStateReligion() const;
 	bool isHolyCity() const;
@@ -7150,6 +7204,7 @@ private:
 	std::vector<int> m_aiFeaturesRequired;
 	std::vector<int> m_aiTerrainsRequired;
 	std::vector<int> m_aiImprovementsRequired;
+	std::vector<int> m_aiNotImprovementsRequired;
 	std::vector<int> m_aiBonusesRequired;
 	std::vector<int> m_aiRoutesRequired;
 	std::vector<int> m_aiReligionsRequired;
@@ -7176,6 +7231,7 @@ private:
 	bool m_bShowPlot;
 	bool m_bUnitsOnPlot;
 	bool m_bOwnPlot;
+	bool m_bNotOnCity;
 	bool m_bPickReligion;
 	bool m_bStateReligion;
 	bool m_bHolyCity;
